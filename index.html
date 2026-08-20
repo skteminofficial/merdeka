@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#071a52">
+<title>Bulan Kemerdekaan 2026 | SK Temin</title>
+<style>
+:root{--navy:#071a52;--blue:#1649a6;--red:#d71920;--yellow:#ffd43b;--cream:#fffaf0;--ink:#15213d;--muted:#667085;--card:#fff;--line:#e7eaf0}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:
+linear-gradient(135deg,rgba(255,212,59,.13) 25%,transparent 25%) 0 0/36px 36px,
+linear-gradient(315deg,rgba(22,73,166,.07) 25%,transparent 25%) 0 0/36px 36px,
+#f8fbff}
+a{color:inherit}.wrap{max-width:1120px;margin:auto;padding:0 16px}
+.hero{color:white;position:relative;overflow:hidden;border-bottom:7px solid var(--yellow);
+background:
+linear-gradient(90deg,#071a52 0 30%,transparent 30%),
+repeating-linear-gradient(0deg,#d71920 0 18px,#ffffff 18px 36px)}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,26,82,.93) 0 38%,rgba(7,26,82,.72) 55%,rgba(7,26,82,.34) 100%)}
+.hero .inner{position:relative;z-index:2;padding:28px 16px 26px;text-align:center}
+.logo-school{width:84px;height:84px;object-fit:contain;background:#fff;border-radius:50%;padding:7px;box-shadow:0 5px 18px #0005;border:4px solid var(--yellow);margin-bottom:6px}
+.school{font-weight:800;letter-spacing:.06em;font-size:13px;color:#ffe67a}
+h1{margin:6px 0 4px;font-size:clamp(29px,6vw,56px);line-height:1.02}.theme{font-size:clamp(16px,3vw,23px);font-weight:750;margin:10px auto;max-width:780px}
+.theme b{color:var(--yellow)}.tag{opacity:.9;margin:0}
+.quick{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);box-shadow:0 5px 18px #081a5130}
+.quick .wrap{display:flex;gap:8px;overflow:auto;padding-top:10px;padding-bottom:10px}
+.quick a{white-space:nowrap;text-decoration:none;padding:9px 13px;border-radius:999px;background:#eef4ff;font-weight:800;font-size:13px;border:1px solid #d8e4fb}
+.quick a:first-child{background:var(--navy);color:white}
+section{scroll-margin-top:72px;padding:27px 0}
+.title-row{display:flex;align-items:end;justify-content:space-between;gap:14px;margin-bottom:13px}
+h2{margin:0;font-size:clamp(23px,4vw,34px)}.sub{color:var(--muted);font-size:14px}
+.notice{margin-top:18px;background:#fff5ca;border:2px solid var(--yellow);border-radius:18px;padding:14px 16px;display:flex;gap:12px;align-items:center;box-shadow:0 7px 20px #6d5b0017}
+.notice .bell{font-size:28px}.notice strong{display:block}.next-name{color:#a30e18}
+.calendar-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.poster-shell,.card{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 8px 24px #162a4d12}
+.poster-shell img{width:100%;display:block}
+.poster-shell .cap{padding:11px 13px;font-weight:800}
+.section-head{display:flex;gap:10px;align-items:center;margin-bottom:14px}.pill{font-size:12px;font-weight:900;padding:6px 10px;border-radius:999px;color:white;background:var(--blue)}
+.pill.red{background:var(--red)}.pill.gold{background:#9c6c00}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.card{display:grid;grid-template-columns:42% 58%;min-height:300px;transition:.2s transform,.2s box-shadow}
+.card:hover{transform:translateY(-2px);box-shadow:0 12px 30px #162a4d20}
+.card .img-wrap{background:#e8eef8;position:relative;min-height:100%}
+.card img{width:100%;height:100%;object-fit:cover;display:block}
+.card .info{padding:16px}.card h3{font-size:20px;line-height:1.15;margin:0 0 9px}
+.meta{display:grid;gap:7px;font-size:14px}.meta div{display:flex;gap:8px}.meta b{min-width:78px}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}.badge{font-size:11px;font-weight:850;border-radius:999px;padding:5px 8px;background:#edf2ff;color:#233b78}
+.badge.online{background:#e9f9f0;color:#17663b}.badge.face{background:#fff1e5;color:#914600}
+.drive{display:inline-block;margin-top:12px;text-decoration:none;color:var(--blue);font-weight:800;font-size:13px}
+.deadline{font-weight:900;color:#b01520}
+.card.nearest{border:3px solid var(--yellow);animation:glow 1.15s ease-in-out infinite alternate}
+.card.nearest:before{content:var(--urgent-label,"⏰ TARIKH TERDEKAT");position:absolute;z-index:2;background:var(--red);color:white;font-weight:900;font-size:11px;padding:7px 10px;border-radius:0 0 10px 0}
+.card{position:relative}
+@keyframes glow{from{box-shadow:0 0 0 0 rgba(255,212,59,.2)}to{box-shadow:0 0 0 8px rgba(255,212,59,.45)}}
+.timeline{display:flex;gap:10px;overflow:auto;padding:3px 1px 8px}
+.titem{min-width:190px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px}
+.titem.near{border:2px solid var(--yellow);animation:blinkText 1s steps(2,end) infinite}
+.tdate{font-weight:900;color:var(--red)}.tname{font-weight:750;font-size:13px;margin-top:4px}
+@keyframes blinkText{50%{opacity:.45}}
+.general{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+footer{margin-top:25px;background:var(--navy);color:#fff;text-align:center;padding:22px 15px;border-top:5px solid var(--yellow)}
+.small{font-size:12px;opacity:.8}
+@media(max-width:850px){.cards{grid-template-columns:1fr}.card{grid-template-columns:39% 61%}}
+@media(max-width:640px){
+.calendar-grid,.general{grid-template-columns:1fr}.hero .inner{padding-top:25px}
+.card{display:block}.card .img-wrap{height:auto}.card img{height:auto;object-fit:contain}.card .info{padding:14px}
+.cards{gap:14px}.title-row{align-items:start;flex-direction:column}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.card.nearest,.titem.near{animation:none}}
+</style>
+</head>
+<body>
+<header class="hero">
+ <div class="inner wrap">
+  <img class="logo-school" src="https://github.com/skteminofficial/assets/raw/main/logos/logo-sk-temin.png" alt="Logo SK Temin">
+  <div class="school">SEKOLAH KEBANGSAAN TEMIN · JERANTUT, PAHANG</div>
+  <h1>Bulan Kemerdekaan 2026</h1>
+  <p class="theme">Malaysia MADANI: <b>Kesejahteraan Dinikmati</b></p>
+  <p class="tag">Semak poster, tarikh tutup dan kaedah pertandingan di satu tempat.</p>
+ </div>
+</header>
+
+<nav class="quick">
+ <div class="wrap">
+  <a href="#kalendar">📅 Kalendar</a>
+  <a href="#semua">🇲🇾 Semua — Tahap 1 & 2</a>
+  <a href="#tahap1">🔴 Tahap 1 Sahaja</a>
+  <a href="#tahap2">🔵 Tahap 2 Sahaja</a>
+ </div>
+</nav>
+
+<main class="wrap">
+ <div class="notice">
+  <div class="bell">🔔</div>
+  <div><strong>Perlu bersedia sekarang</strong><span id="nextText">Sedang menyusun pertandingan terdekat…</span></div>
+ </div>
+
+ <section id="kalendar">
+  <div class="title-row"><div><h2>📅 Kalendar Penting</h2><div class="sub">Ogos & September 2026 — rujukan pantas ibu bapa dan murid.</div></div></div>
+  <div class="calendar-grid">
+   <div class="poster-shell"><img src="assets/kalendar-ogos.jpg" alt="Kalendar pertandingan Ogos 2026"><div class="cap">Ogos 2026</div></div>
+   <div class="poster-shell"><img src="assets/kalendar-september.jpg" alt="Kalendar pertandingan September 2026"><div class="cap">September 2026</div></div>
+  </div>
+  <h3 style="margin-bottom:8px">Tarikh seterusnya</h3>
+  <div class="timeline" id="timeline"></div>
+  <div class="general">
+    <div class="poster-shell"><img loading="lazy" src="assets/aktiviti-bulan-merdeka.jpg" alt="Aktiviti sepanjang Bulan Kemerdekaan"><div class="cap">Aktiviti sepanjang Bulan Kemerdekaan</div></div>
+    <div style="background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px">
+      <h3 style="margin-top:0">📌 Cara guna laman ini</h3>
+      <p>Poster dipaparkan terus supaya tak perlu banyak klik. Gunakan menu di atas untuk lompat terus ke kategori murid.</p>
+      <p><b>Nota:</b> Maklumat ringkas di bawah diambil daripada poster. Jika ada perubahan oleh guru/penganjur, makluman terkini sekolah hendaklah diutamakan.</p>
+    </div>
+  </div>
+ </section>
+
+ <section id="semua">
+  <div class="section-head"><span class="pill gold">SEMUA</span><div><h2>Semua — Tahap 1 & Tahap 2</h2><div class="sub">Terbuka kepada kedua-dua tahap / semua murid seperti dinyatakan pada poster.</div></div></div>
+  <div class="cards" data-sort>
+   <article class="card" data-date="2026-08-23" data-title="Sajak Bahasa Melayu — Saringan Video" data-online="true">
+    <div class="img-wrap"><img loading="lazy" src="assets/bahasa-melayu.png" alt="Pertandingan Bahasa Melayu"></div>
+    <div class="info"><h3>Pertandingan Bahasa Melayu</h3><div class="badges"><span class="badge online">Sajak: Online → Akhir bersemuka</span><span class="badge face">Tulisan: Bersemuka</span></div>
+     <div class="meta"><div><b>Aktiviti</b><span>Tulisan Cantik (T1), Tulisan Berangkai (T2), Sajak (T2)</span></div><div><b>Dateline</b><span class="deadline">Sajak: 23 Ogos 2026</span></div><div><b>Tempat</b><span>Tulisan: kelas masing-masing; akhir sajak: bersemuka</span></div><div><b>Kaedah</b><span>Saringan sajak melalui penghantaran video.</span></div></div>
+     <a class="drive" href="https://drive.google.com/file/d/1MzxZlL9R8K_xy6oYdT_kesOsTEIxNnUE/view?usp=drivesdk" target="_blank" rel="noopener">Buka poster asal ↗</a>
+    </div>
+   </article>
+   <article class="card" data-date="2026-08-23" data-title="Lagu Patriotik Solo" data-online="true">
+    <div class="img-wrap"><img loading="lazy" src="assets/lagu-patriotik-solo.jpg" alt="Pertandingan Lagu Patriotik Solo"></div>
+    <div class="info"><h3>Lagu Patriotik (Solo)</h3><div class="badges"><span class="badge online">Online — video</span></div>
+     <div class="meta"><div><b>Dateline</b><span class="deadline">23 Ogos 2026</span></div><div><b>Peserta</b><span>Semua murid, pra sekolah hingga Tahun 6</span></div><div><b>Tempat</b><span>—</span></div><div><b>Kaedah</b><span>Rakaman video melintang, gambar penuh badan, muzik minus one; hantar melalui Telegram.</span></div></div>
+     <a class="drive" href="https://drive.google.com/file/d/1mGqtiOQ5I8Al7aIeOJw5A8zEa-wvXhhR/view?usp=drivesdk" target="_blank" rel="noopener">Buka poster asal ↗</a>
+    </div>
+   </article>
+   <article class="card" data-date="2026-09-07" data-title="Pertandingan Bahasa Inggeris">
+    <div class="img-wrap"><img loading="lazy" src="assets/bahasa-inggeris.jpg" alt="Pertandingan Bahasa Inggeris"></div>
+    <div class="info"><h3>English Competition</h3><div class="badges"><span class="badge face">Bersemuka — kelas</span></div>
+     <div class="meta"><div><b>Aktiviti</b><span>Penmanship (T1) & Cursive Writing (T2)</span></div><div><b>Tarikh</b><span class="deadline">7 September 2026 · 8:00 pagi</span></div><div><b>Tempat</b><span>Kelas masing-masing</span></div><div><b>Kaedah</b><span>Bersemuka; bawa alat tulis lengkap.</span></div></div>
+     <a class="drive" href="https://drive.google.com/file/d/13FmGtT5YGhcRyur3N4reGq_WzJ0G-Wmj/view?usp=drivesdk" target="_blank" rel="noopener">Buka poster asal ↗</a>
+    </div>
+   </article>
+   <article class="card" data-date="2026-09-07" data-title="Basikal Berhias Merdeka" data-online="true">
+    <div class="img-wrap"><img loading="lazy" src="assets/basikal-berhias.jpg" alt="Pertandingan Basikal Berhias Merdeka"></div>
+    <div class="info"><h3>Basikal Berhias Merdeka</h3><div class="badges"><span class="badge online">Online — gambar</span></div>
+     <div class="meta"><div><b>Dateline</b><span class="deadline">7 September 2026</span></div><div><b>Peserta</b><span>Murid Tahap 1</span></div><div><b>Tempat</b><span>—</span></div><div><b>Kaedah</b><span>Hias basikal di rumah; hantar 2 gambar melalui Telegram: basikal dan peserta bersama basikal.</span></div></div>
+     <a class="drive" href="https://drive.google.com/file/d/1pp_PVcqNUIqZAUwV5D7eCEmwUCJvbuBF/view?usp=drivesdk" target="_blank" rel="noopener">Buka poster asal ↗</a>
+    </div>
+   </article>
+   <article class="card" data-date="2026-09-11" data-title="Kelas Kreatif Merdeka">
+    <div class="img-wrap"><img loading="lazy" src="assets/kelas-kreatif.jpg" alt="Pertandingan Kelas Kreatif Merdeka"></div>
+    <div class="info"><h3>Kelas Kreatif Merdeka</h3><div class="badges"><span class="badge face">Bersemuka — kelas</span></div>
+     <div class="meta"><div><b>Tempoh</b><span class="deadline">17 Ogos – 11 September 2026</span></div><div><b>Tempat</b><span>Kelas masing-masing</span></div><div><b>Kaedah</b><span>Hias dan kemaskan kelas. Penilaian: info/sudut kemerdekaan, kebersihan, kekemasan/keceriaan dan kreativiti.</span></div></div>
+     <a class="drive" href="https://drive.google.com/file/d/1ILVoz3jAvMaZWSTWtk8BJGqv0My_3Qnp/view?usp=drivesdk" target="_blank" rel="noopener">Buka poster asal ↗</a>
+    </div>
+   </article>
+  </div>
+ </section>
+
+ <section id="tahap1">
+  <div class="section-head"><span class="pill red">TAHAP 1</span><div><h2>Tahap 1 Sahaja</h2><div class="sub">Susunan mengikut tarikh pertandingan / tarikh tutup.</div></div></div>
+  <div class="cards" data-sort>
+   <article class="card" data-date="2026-08-21" data-title="Seni Kraf Rama-rama Merdeka">
+    <div class="img-wrap"><img loading="lazy" src="assets/t1-rama-rama.jpg" alt="Seni Kraf Rama-rama Merdeka"></div>
+    <div class="info"><h3>Seni Kraf Rama-rama Merdeka</h3><div class="badges"><span class="badge face">Bersemuka — kelas</span></div>
+     <div class="meta"><div><b>Tarikh</b><span class="deadline">21 Ogos 2026</span></div><div><b>Masa</b><span>10:30 pagi – 12:00 tengah hari</span></div><div><b>Tempat</b><span>Kelas masing-masing</span></div><div><b>Kaedah</b><span>Dijalankan bersama guru mata pelajaran semasa. Bawa bahan seperti dalam poster.</span></div></div>
+     <a class="drive" href="https://drive.google.com/file/d/1juI2NKxdMk61LUgbZTSnikhUEGgs20xo/view?usp=drivesdk" target="_blank" rel="noopener">Buka poster asal ↗</a>
+    </div>
+   </article>
+   <article class="card" data-date="2026-08-26" data-title="Mewarna Poster Kemerdekaan">
+    <div class="img-wrap"><img loading="lazy" src="assets/t1-poster.jpg" alt="Mewarna Poster Kemerdekaan"></div>
+    <div class="info"><h3>Mewarna Poster Kemerdekaan</h3><div class="badges"><span class="badge face">Bersemuka — kelas</span></div>
+     <div class="meta"><div><b>Tarikh</b><span class="deadline">26 Ogos 2026</span></div><div><b>Peserta</b><span>Tahun 1, 2 dan 3</span></div><div><b>Tempat</b><span>Kelas masing-masing</span></div><div><b>Kaedah</b><span>Mewarna poster; murid membawa pensel warna sendiri.</span></div></div>
+     <a class="drive" href="https://drive.google.com/file/d/1Pjml9Be0k4i54E3PtFEX4dnPMfec9UmH/view?usp=drivesdk" target="_blank" rel="noopener">Buka poster asal ↗</a>
+    </div>
+   </article>
+   <article class="card" data-date="2026-09-04" data-title="Pakaian Beragam Tahap 1" data-online="true">
+    <div class="img-wrap"><img loading="lazy" src="assets/t1-pakaian.jpg" alt="Pakaian Beragam Tahap 1"></div>
+    <div class="info"><h3>Pakaian Beragam Tahap 1</h3><div class="badges"><span class="badge online">Online — gambar</span></div>
+     <div class="meta"><div><b>Dateline</b><span class="deadline">4 September 2026</span></div><div><b>Tempat</b><span>—</span></div><div><b>Kaedah</b><span>Pakai kostum kreatif, ambil 1 gambar jelas dan hantar melalui Telegram pada pautan/QR poster.</span></div></div>
+     <a class="drive" href="https://drive.google.com/file/d/1VUlBnMNz3soC7MVOyAmX2ZpC4Z8vZY6T/view?usp=drivesdk" target="_blank" rel="noopener">Buka poster asal ↗</a>
+    </div>
+   </article>
+   <article class="card" data-date="2026-09-08" data-title="Mewarna Bahasa Arab">
+    <div class="img-wrap"><img loading="lazy" src="assets/t1-mewarna-arab.jpg" alt="Mewarna Bahasa Arab"></div>
+    <div class="info"><h3>Mewarna Bahasa Arab</h3><div class="badges"><span class="badge face">Bersemuka — kelas</span></div>
+     <div class="meta"><div><b>Tarikh</b><span class="deadline">8 September 2026</span></div><div><b>Masa</b><span>8:00 – 9:00 pagi</span></div><div><b>Tempat</b><span>Kelas masing-masing</span></div><div><b>Kaedah</b><span>Bersemuka; bawa alat mewarna sendiri.</span></div></div>
+     <a class="drive" href="https://drive.google.com/file/d/1Q1areAhXhfw-yAoTJOx1m-tvJJrNLRO_/view?usp=drivesdk" target="_blank" rel="noopener">Buka poster asal ↗</a>
+    </div>
+   </article>
+   <article class="card" data-date="2026-09-09" data-title="Jawi Merdeka">
+    <div class="img-wrap"><img loading="lazy" src="assets/t1-jawi.jpg" alt="Jawi Merdeka"></div>
+    <div class="info"><h3>Jawi Merdeka</h3><div class="badges"><span class="badge face">Bersemuka — kelas</span></div>
+     <div class="meta"><div><b>Tarikh</b><span class="deadline">9 September 2026</span></div><div><b>Masa</b><span>8:40 – 9:40 pagi</span></div><div><b>Tempat</b><span>Kelas masing-masing</span></div><div><b>Kaedah</b><span>Menulis teks Jawi dan menjawikan perkataan Rumi; dipantau guru mata pelajaran berkaitan.</span></div></div>
+     <a class="drive" href="https://drive.google.com/file/d/1eo-PoZxTk3RdR28SPsDPUMDuETC0rmP0/view?usp=drivesdk" target="_blank" rel="noopener">Buka poster asal ↗</a>
+    </div>
+   </article>
+  </div>
+ </section>
+
+ <section id="tahap2">
+  <div class="section-head"><span class="pill">TAHAP 2</span><div><h2>Tahap 2 Sahaja</h2><div class="sub">Susunan mengikut tarikh pertandingan / tarikh tutup.</div></div></div>
+  <div class="cards" data-sort>
+   <article class="card" data-date="2026-08-20" data-title="Tulisan Berangkai Kemerdekaan">
+    <div class="img-wrap"><img loading="lazy" src="assets/t2-tulisan.jpg" alt="Tulisan Berangkai Kemerdekaan"></div>
+    <div class="info"><h3>Tulisan Berangkai Kemerdekaan</h3><div class="badges"><span class="badge face">Bersemuka — kelas</span></div>
+     <div class="meta"><div><b>Tarikh</b><span class="deadline">20 Ogos 2026</span></div><div><b>Tempat</b><span>Kelas masing-masing</span></div><div><b>Kaedah</b><span>Menulis pada borang yang disediakan dan dinilai oleh panel.</span></div></div>
+     <a class="drive" href="https://drive.google.com/file/d/1xxtRC0f10-WTJWefnz67C9n53ox4SCyd/view?usp=drivesdk" target="_blank" rel="noopener">Buka poster asal ↗</a>
+    </div>
+   </article>
+   <article class="card" data-date="2026-08-26" data-title="Poster Digital Tahap 2">
+    <div class="img-wrap"><img loading="lazy" src="assets/t2-poster-digital.jpg" alt="Poster Digital Tahap 2"></div>
+    <div class="info"><h3>Poster Digital</h3><div class="badges"><span class="badge face">Bersemuka — bilik khas</span></div>
+     <div class="meta"><div><b>Tarikh</b><span class="deadline">26 Ogos 2026</span></div><div><b>Masa</b><span>1:50 – 4:00 petang</span></div><div><b>Tempat</b><span>Makmal Komputer</span></div><div><b>Kaedah</b><span>Bersemuka; siapkan poster dalam tempoh ditetapkan dan hantar sebelum 4:00 petang.</span></div></div>
+     <a class="drive" href="https://drive.google.com/file/d/1Tg8txThj5-GvUKJUy_VChSScV4sapuxT/view?usp=drivesdk" target="_blank" rel="noopener">Buka poster asal ↗</a>
+    </div>
+   </article>
+   <article class="card" data-date="2026-08-26" data-title="Kuiz Sejarah">
+    <div class="img-wrap"><img loading="lazy" src="assets/t2-kuiz-sejarah.jpg" alt="Kuiz Sejarah Tahap 2"></div>
+    <div class="info"><h3>Kuiz Sejarah</h3><div class="badges"><span class="badge face">Bersemuka — semasa PdP</span></div>
+     <div class="meta"><div><b>Tarikh</b><span class="deadline">26 Ogos 2026</span></div><div><b>Masa</b><span>7:40 – 8:40 pagi</span></div><div><b>Tempat</b><span>Semasa kelas / guru subjek semasa</span></div><div><b>Kaedah</b><span>Soalan diedar guru; masa menjawab 30 minit dan 5 terbaik dipilih.</span></div></div>
+     <a class="drive" href="https://drive.google.com/file/d/1CTA66qmOa1PewoGEZ34tV_jUSa-ErzXn/view?usp=drivesdk" target="_blank" rel="noopener">Buka poster asal ↗</a>
+    </div>
+   </article>
+   <article class="card" data-date="2026-08-28" data-title="Sajak Bahasa Arab" data-online="true">
+    <div class="img-wrap"><img loading="lazy" src="assets/t2-sajak-arab.jpg" alt="Sajak Bahasa Arab"></div>
+    <div class="info"><h3>Deklamasi Sajak Bahasa Arab</h3><div class="badges"><span class="badge online">Online — video</span></div>
+     <div class="meta"><div><b>Dateline</b><span class="deadline">28 Ogos 2026</span></div><div><b>Tempat</b><span>—</span></div><div><b>Kaedah</b><span>Rakaman melintang 2–3 minit dan dihantar melalui Telegram. Pilih tajuk/tema seperti pada poster.</span></div></div>
+     <a class="drive" href="https://drive.google.com/file/d/12vtGjtS2yg8-gmy3QCi84hlYhwbZ4_8g/view?usp=drivesdk" target="_blank" rel="noopener">Buka poster asal ↗</a><br>
+     <a class="drive" href="https://drive.google.com/file/d/1vczqzroO9sb4NkJM4CDs3NKG_BMh3j_H/view?usp=drivesdk" target="_blank" rel="noopener">Pilihan tajuk sajak (PDF) ↗</a>
+    </div>
+   </article>
+   <article class="card" data-date="2026-09-04" data-title="Pakaian Beragam Tahap 2" data-online="true">
+    <div class="img-wrap"><img loading="lazy" src="assets/t2-pakaian.jpg" alt="Pakaian Beragam Tahap 2"></div>
+    <div class="info"><h3>Pakaian Beragam Tahap 2</h3><div class="badges"><span class="badge online">Online — gambar</span></div>
+     <div class="meta"><div><b>Dateline</b><span class="deadline">4 September 2026</span></div><div><b>Tempat</b><span>—</span></div><div><b>Kaedah</b><span>Hantar gambar melalui Telegram seperti pada poster. 10 pemenang dipilih; peragaan pentas pada 15 September.</span></div></div>
+     <a class="drive" href="https://drive.google.com/file/d/1U-E7N1P5t--7n0e3aCES-blJjvqX7Udo/view?usp=drivesdk" target="_blank" rel="noopener">Buka poster asal ↗</a>
+    </div>
+   </article>
+   <article class="card" data-date="2026-09-08" data-title="Diorama Kemerdekaan">
+    <div class="img-wrap"><img loading="lazy" src="assets/t2-diorama.jpg" alt="Diorama Kemerdekaan"></div>
+    <div class="info"><h3>Diorama Kemerdekaan</h3><div class="badges"><span class="badge face">Serahan fizikal — bilik khas</span></div>
+     <div class="meta"><div><b>Tarikh</b><span class="deadline">8 September 2026 · 7:40 pagi</span></div><div><b>Tempat</b><span>Bilik PSV</span></div><div><b>Kaedah</b><span>Siapkan karya dari rumah dan bawa untuk serahan pada tarikh ditetapkan.</span></div></div>
+     <a class="drive" href="https://drive.google.com/file/d/1BDtpjrdFO5d8bA4Xj10YLX2JqV9OAEaw/view?usp=drivesdk" target="_blank" rel="noopener">Buka poster asal ↗</a>
+    </div>
+   </article>
+   <article class="card" data-date="2026-09-10" data-title="Buku Skrap Merdeka">
+    <div class="img-wrap"><img loading="lazy" src="assets/t2-buku-skrap.jpg" alt="Buku Skrap Merdeka"></div>
+    <div class="info"><h3>Buku Skrap Merdeka</h3><div class="badges"><span class="badge face">Serahan fizikal</span></div>
+     <div class="meta"><div><b>Dateline</b><span class="deadline">10 September 2026</span></div><div><b>Tempat</b><span>Serah kepada Teacher Zashima / Teacher Adleen (PSS)</span></div><div><b>Kaedah</b><span>Buku skrap fizikal saiz A4 bertema Merdeka/Malaysia/sejarah tempatan.</span></div></div>
+     <a class="drive" href="https://drive.google.com/file/d/1pEwrANgXFqOFKOeq__ZLicBDMkwOveOc/view?usp=drivesdk" target="_blank" rel="noopener">Buka poster asal ↗</a>
+    </div>
+   </article>
+   <article class="card undated" data-title="TikTok Merdeka" data-online="true">
+    <div class="img-wrap"><img loading="lazy" src="assets/t2-tiktok.jpg" alt="TikTok Merdeka"></div>
+    <div class="info"><h3>TikTok Merdeka</h3><div class="badges"><span class="badge online">Online — video</span></div>
+     <div class="meta"><div><b>Dateline</b><span>Rujuk makluman / kalendar sekolah</span></div><div><b>Tempat</b><span>—</span></div><div><b>Kaedah</b><span>Video maksimum 30 saat, rakaman sendiri, melintang, satu penyertaan setiap murid; hantar pautan TikTok melalui QR.</span></div></div>
+     <a class="drive" href="https://drive.google.com/file/d/1tQSdJ6JmJEnFp58ZYc_tsDvlAxJrLZEf/view?usp=drivesdk" target="_blank" rel="noopener">Buka poster asal ↗</a>
+    </div>
+   </article>
+   <article class="card undated" data-title="Koir Lagu Patriotik">
+    <div class="img-wrap"><img loading="lazy" src="assets/t2-koir.jpg" alt="Koir Lagu Patriotik Tahap 2"></div>
+    <div class="info"><h3>Koir Lagu Patriotik</h3><div class="badges"><span class="badge face">Bersemuka</span></div>
+     <div class="meta"><div><b>Tarikh</b><span>Akan dimaklumkan</span></div><div><b>Peserta</b><span>Semua kelas Tahap 2 · 10–20 peserta</span></div><div><b>Tempat</b><span>Akan dimaklumkan</span></div><div><b>Kaedah</b><span>2 lagu: “Tanggal 31 Ogos” (wajib) + 1 lagu patriotik pilihan.</span></div></div>
+     <a class="drive" href="https://drive.google.com/file/d/1tBapmTi42gxDqrcMQyv8tYuTlKppS-VE/view?usp=drivesdk" target="_blank" rel="noopener">Buka poster asal ↗</a>
+    </div>
+   </article>
+  </div>
+ </section>
+</main>
+
+<footer>
+ <b>SK TEMIN · BULAN KEMERDEKAAN 2026</b><br>
+ <span class="small">“The More You Do, The More You Get” · Tarikh dan maklumat adalah berdasarkan poster pertandingan.</span>
+</footer>
+
+<script>
+const today = new Date(); today.setHours(0,0,0,0);
+const tomorrow = new Date(today); tomorrow.setDate(today.getDate()+1);
+const dated = [...document.querySelectorAll('.card[data-date]')];
+
+document.querySelectorAll('[data-sort]').forEach(grid=>{
+  [...grid.children].sort((a,b)=>{
+    const da=a.dataset.date ? new Date(a.dataset.date+'T00:00:00') : new Date('2999-01-01');
+    const db=b.dataset.date ? new Date(b.dataset.date+'T00:00:00') : new Date('2999-01-01');
+    return da-db;
+  }).forEach(x=>grid.appendChild(x));
+});
+
+const items = dated
+ .map(el=>({
+   el,
+   date:new Date(el.dataset.date+'T00:00:00'),
+   title:el.dataset.title,
+   online:el.dataset.online==="true"
+ }))
+ .filter(x=>x.date>=tomorrow)
+ .sort((a,b)=>a.date-b.date);
+
+const fmt = d => new Intl.DateTimeFormat('ms-MY',{day:'numeric',month:'long',year:'numeric'}).format(d);
+const daysUntil = d => Math.ceil((d-today)/(1000*60*60*24));
+
+/* 
+Urgency:
+- Bersemuka: highlight paling hampir bermula esok.
+- Online/video: highlight awal jika dateline dalam 4 hari,
+  supaya sempat rakam / edit / hantar.
+*/
+const prepOnline = items.filter(x=>x.online && daysUntil(x.date)<=4);
+const nearestFuture = items.length ? items[0] : null;
+
+let urgent = prepOnline.length ? prepOnline : (nearestFuture ? items.filter(x=>x.date.getTime()===nearestFuture.date.getTime()) : []);
+
+urgent.forEach(x=>x.el.classList.add('nearest'));
+
+if(urgent.length){
+  const onlineNotice = urgent.some(x=>x.online);
+  const label = onlineNotice ? '⚠️ PERLU MULA SEDIA SEKARANG' : '⏰ TARIKH TERDEKAT';
+  urgent.forEach(x=>{
+    x.el.style.setProperty('--urgent-label', `"${label}"`);
+  });
+  document.getElementById('nextText').innerHTML =
+    `<span class="next-name">${urgent.map(x=>`${fmt(x.date)} — ${x.title}${x.online ? ' (online/video)' : ''}`).join(' • ')}</span>`;
+}else{
+  document.getElementById('nextText').textContent='Tiada pertandingan akan datang yang perlu diberi amaran.';
+}
+
+const tl=document.getElementById('timeline');
+items.slice(0,8).forEach(x=>{
+  const isUrgent = urgent.includes(x);
+  const d=document.createElement('div'); d.className='titem'+(isUrgent?' near':'');
+  d.innerHTML=`<div class="tdate">${fmt(x.date)}</div><div class="tname">${x.title}${x.online?' · Online/video':''}</div>`;
+  tl.appendChild(d);
+});
+</script>
+</body>
+</html>
