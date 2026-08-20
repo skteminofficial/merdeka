@@ -45,10 +45,10 @@ h2{margin:0;font-size:clamp(23px,4vw,34px)}.sub{color:var(--muted);font-size:14p
 .card:hover{transform:translateY(-2px);box-shadow:0 12px 30px #162a4d20}
 .card .img-wrap{background:linear-gradient(145deg,#edf3ff,#fff7e3);position:relative;min-height:0;border-radius:14px;padding:9px;border:1px solid #d9e2f1;display:flex;align-items:flex-start;justify-content:center}
 .card img{width:100%;height:auto;max-height:430px;object-fit:contain;display:block;border-radius:9px;border:4px solid #fff;box-shadow:0 5px 15px #0a1c4024}
-.card .info{padding:12px 15px 15px}.card h3{font-size:20px;line-height:1.15;margin:0 0 9px}
-.card .info:before{content:"RINGKASAN PERTANDINGAN";display:inline-block;font-size:10px;letter-spacing:.08em;font-weight:950;color:#fff;background:var(--navy);padding:5px 8px;border-radius:999px;margin-bottom:9px}
-.meta{display:grid;gap:7px;font-size:14px;background:#f7f9fd;border:1px solid #e0e7f2;border-radius:12px;padding:11px}
-.meta div{display:grid;grid-template-columns:82px 1fr;gap:8px;align-items:start}.meta b{min-width:0;color:#243b70}
+.card .info{padding:14px 16px 16px;text-align:left}.card h3{font-size:20px;line-height:1.15;margin:0 0 9px}
+.card .info:before{content:none}
+.meta{display:grid;gap:8px;font-size:14px;background:#f7f9fd;border:1px solid #e0e7f2;border-radius:12px;padding:12px;text-align:left}
+.meta div{display:grid;grid-template-columns:120px minmax(0,1fr);gap:10px;align-items:start}.meta b{min-width:0;color:#243b70;text-align:left}.meta span{text-align:left}
 .badges{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}.badge{font-size:11px;font-weight:850;border-radius:999px;padding:5px 8px;background:#edf2ff;color:#233b78}
 .badge.online{background:#e9f9f0;color:#17663b}.badge.face{background:#fff1e5;color:#914600}
 .drive{display:inline-block;margin-top:12px;text-decoration:none;color:var(--blue);font-weight:800;font-size:13px}
@@ -69,7 +69,7 @@ footer{margin-top:25px;background:var(--navy);color:#fff;text-align:center;paddi
 @media(max-width:640px){
 .calendar-grid,.general{grid-template-columns:1fr}.hero .inner{padding-top:25px}
 .card{display:block;padding:9px}.card .img-wrap{height:310px;overflow:hidden;align-items:center}.card img{width:100%;height:100%;max-height:292px;object-fit:contain}.card .info{padding:14px 7px 8px}
-.meta div{grid-template-columns:76px 1fr}
+.meta div{grid-template-columns:105px minmax(0,1fr)}
 .cards{gap:14px}.title-row{align-items:start;flex-direction:column}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.card.nearest,.titem.near{animation:none}}
@@ -78,6 +78,11 @@ footer{margin-top:25px;background:var(--navy);color:#fff;text-align:center;paddi
 .poem-callout strong{display:block;color:#8b2500;margin-bottom:5px}
 .poem-btn{display:inline-block;margin-top:7px;padding:9px 13px;border-radius:999px;background:var(--red);color:white;text-decoration:none;font-size:13px;font-weight:900;box-shadow:0 4px 10px #b1112030}
 
+
+.pic{font-weight:900;color:#7a1f25}
+.action-link{display:inline-block;margin-top:8px;padding:8px 11px;border-radius:10px;background:#eaf2ff;color:#123a83;text-decoration:none;font-size:13px;font-weight:850;border:1px solid #c9d9f7}
+.whatsapp-link{background:#eafaf0;color:#17633a;border-color:#bfe8cf}
+.placeholder-card{border-style:dashed;background:linear-gradient(145deg,#fffdf5,#f8fbff)}
 </style>
 </head>
 <body>
@@ -94,7 +99,7 @@ footer{margin-top:25px;background:var(--navy);color:#fff;text-align:center;paddi
 <nav class="quick">
  <div class="wrap">
   <a href="#kalendar">📅 Kalendar</a>
-  <a href="#semua">ALL — Tahap 1 & 2</a>
+  <a href="#semua">Semua — Tahap 1 & 2</a>
   <a href="#tahap1">🔴 Tahap 1 Sahaja</a>
   <a href="#tahap2">🔵 Tahap 2 Sahaja</a>
  </div>
@@ -118,7 +123,7 @@ footer{margin-top:25px;background:var(--navy);color:#fff;text-align:center;paddi
     <div class="poster-shell"><img loading="lazy" src="assets/aktiviti-bulan-merdeka.jpg" alt="Aktiviti sepanjang Bulan Kemerdekaan"><div class="cap">Aktiviti sepanjang Bulan Kemerdekaan</div></div>
     <div style="background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px">
       <h3 style="margin-top:0">📌 Cara guna laman ini</h3>
-      <p>Klik link untuk lihat poster penuh. Gunakan menu di atas untuk lompat terus ke kategori murid.</p>
+      <p>Poster dipaparkan terus supaya tak perlu banyak klik. Gunakan menu di atas untuk lompat terus ke kategori murid.</p>
       <p><b>Nota:</b> Maklumat ringkas di bawah diambil daripada poster. Jika ada perubahan oleh guru/penganjur, makluman terkini sekolah hendaklah diutamakan.</p>
     </div>
   </div>
@@ -130,35 +135,35 @@ footer{margin-top:25px;background:var(--navy);color:#fff;text-align:center;paddi
    <article class="card" data-date="2026-08-23" data-title="Sajak Bahasa Melayu — Saringan Video" data-online="true">
     <div class="img-wrap"><img loading="lazy" src="assets/bahasa-melayu.png" alt="Pertandingan Bahasa Melayu"></div>
     <div class="info"><h3>Pertandingan Bahasa Melayu</h3><div class="badges"><span class="badge online">Sajak: Online → Akhir bersemuka</span><span class="badge face">Tulisan: Bersemuka</span></div>
-     <div class="meta"><div><b>Aktiviti</b><span>Tulisan Cantik (T1), Tulisan Berangkai (T2), Sajak (T2)</span></div><div><b>Dateline</b><span class="deadline">Sajak: 23 Ogos 2026</span></div><div><b>Tempat</b><span>Tulisan: kelas masing-masing; akhir sajak: bersemuka</span></div><div><b>Kaedah</b><span>Saringan sajak melalui penghantaran video.</span></div></div>
+     <div class="meta"><div><b>Aktiviti & PIC</b><span>• Tulisan Cantik (Tahap 1) — <span class="pic">Cg Ilyani</span><br>• Tulisan Berangkai (Tahap 2) — <span class="pic">Cg Rosyati</span><br>• Deklamasi Sajak BM (Tahap 2) — <span class="pic">Cg Ramlah</span></span></div><div><b>Dateline</b><span class="deadline">Sajak: 23 Ogos 2026</span></div><div><b>Tempat</b><span>Tulisan: kelas masing-masing; akhir sajak: bersemuka</span></div><div><b>Kaedah</b><span>Saringan sajak melalui penghantaran video.</span></div></div>
      <a class="drive" href="https://drive.google.com/file/d/1MzxZlL9R8K_xy6oYdT_kesOsTEIxNnUE/view?usp=drivesdk" target="_blank" rel="noopener">Buka poster asal ↗</a>
     </div>
    </article>
    <article class="card" data-date="2026-08-23" data-title="Lagu Patriotik Solo" data-online="true">
     <div class="img-wrap"><img loading="lazy" src="assets/lagu-patriotik-solo.jpg" alt="Pertandingan Lagu Patriotik Solo"></div>
     <div class="info"><h3>Lagu Patriotik (Solo)</h3><div class="badges"><span class="badge online">Online — video</span></div>
-     <div class="meta"><div><b>Dateline</b><span class="deadline">23 Ogos 2026</span></div><div><b>Peserta</b><span>Semua murid, pra sekolah hingga Tahun 6</span></div><div><b>Tempat</b><span>Online / rakaman dari rumah</span></div><div><b>Kaedah</b><span>Rakaman video melintang, gambar penuh badan, muzik minus one; hantar melalui Telegram seperti arahan poster.</span></div></div>
-     <a class="drive" href="https://drive.google.com/file/d/1mGqtiOQ5I8Al7aIeOJw5A8zEa-wvXhhR/view?usp=drivesdk" target="_blank" rel="noopener">Buka poster asal ↗</a>
+     <div class="meta"><div><b>Dateline</b><span class="deadline">23 Ogos 2026</span></div><div><b>Peserta</b><span>Semua murid, pra sekolah hingga Tahun 6</span></div><div><b>Tempat</b><span>Online / rakaman dari rumah</span></div><div><b>Kaedah</b><span>Rakaman video melintang, gambar penuh badan, muzik minus one; hantar melalui Telegram seperti arahan poster.</span></div><div><b>PIC (Seliaan)</b><span class="pic">Teacher Afizah</span></div></div>
+     <a class="action-link" href="https://t.me/LgPatriotik26" target="_blank" rel="noopener">📤 Hantar Video Nyanyian Solo</a><br><a class="drive" href="https://drive.google.com/file/d/1mGqtiOQ5I8Al7aIeOJw5A8zEa-wvXhhR/view?usp=drivesdk" target="_blank" rel="noopener">Buka poster asal ↗</a>
     </div>
    </article>
    <article class="card" data-date="2026-09-07" data-title="Pertandingan Bahasa Inggeris">
     <div class="img-wrap"><img loading="lazy" src="assets/bahasa-inggeris.jpg" alt="Pertandingan Bahasa Inggeris"></div>
     <div class="info"><h3>English Competition</h3><div class="badges"><span class="badge face">Bersemuka — kelas</span></div>
-     <div class="meta"><div><b>Aktiviti</b><span>Penmanship (T1) & Cursive Writing (T2)</span></div><div><b>Tarikh</b><span class="deadline">7 September 2026 · 8:00 pagi</span></div><div><b>Tempat</b><span>Kelas masing-masing</span></div><div><b>Kaedah</b><span>Bersemuka; bawa alat tulis lengkap.</span></div></div>
+     <div class="meta"><div><b>Aktiviti & PIC</b><span>• Tulisan Cantik / Penmanship (Tahap 1) — <span class="pic">Teacher Aida</span><br>• Cursive Writing (Tahap 2) — <span class="pic">Teacher Norfiza</span></span></div><div><b>Tarikh</b><span class="deadline">7 September 2026 · 8:00 pagi</span></div><div><b>Tempat</b><span>Kelas masing-masing</span></div><div><b>Kaedah</b><span>Bersemuka; bawa alat tulis lengkap.</span></div></div>
      <a class="drive" href="https://drive.google.com/file/d/13FmGtT5YGhcRyur3N4reGq_WzJ0G-Wmj/view?usp=drivesdk" target="_blank" rel="noopener">Buka poster asal ↗</a>
     </div>
    </article>
    <article class="card" data-date="2026-09-07" data-title="Basikal Berhias Merdeka" data-online="true">
     <div class="img-wrap"><img loading="lazy" src="assets/basikal-berhias.jpg" alt="Pertandingan Basikal Berhias Merdeka"></div>
     <div class="info"><h3>Basikal Berhias Merdeka</h3><div class="badges"><span class="badge online">Online — gambar</span></div>
-     <div class="meta"><div><b>Dateline</b><span class="deadline">7 September 2026</span></div><div><b>Peserta</b><span>Murid Tahap 1</span></div><div><b>Tempat</b><span>Di rumah</span></div><div><b>Kaedah</b><span>Hias basikal di rumah; hantar 2 gambar melalui Telegram: basikal dan peserta bersama basikal.</span></div></div>
+     <div class="meta"><div><b>Dateline</b><span class="deadline">7 September 2026</span></div><div><b>Peserta</b><span>Murid Tahap 1</span></div><div><b>Tempat</b><span>Di rumah</span></div><div><b>Kaedah</b><span>Hias basikal di rumah; hantar 2 gambar melalui Telegram: basikal dan peserta bersama basikal.</span></div><div><b>PIC (Seliaan)</b><span class="pic">Cg Azhani</span></div></div>
      <a class="drive" href="https://drive.google.com/file/d/1pp_PVcqNUIqZAUwV5D7eCEmwUCJvbuBF/view?usp=drivesdk" target="_blank" rel="noopener">Buka poster asal ↗</a>
     </div>
    </article>
    <article class="card" data-date="2026-09-11" data-title="Kelas Kreatif Merdeka">
     <div class="img-wrap"><img loading="lazy" src="assets/kelas-kreatif.jpg" alt="Pertandingan Kelas Kreatif Merdeka"></div>
     <div class="info"><h3>Kelas Kreatif Merdeka</h3><div class="badges"><span class="badge face">Bersemuka — kelas</span></div>
-     <div class="meta"><div><b>Tempoh</b><span class="deadline">17 Ogos – 11 September 2026</span></div><div><b>Tempat</b><span>Kelas masing-masing</span></div><div><b>Kaedah</b><span>Hias dan kemaskan kelas. Penilaian: info/sudut kemerdekaan, kebersihan, kekemasan/keceriaan dan kreativiti.</span></div></div>
+     <div class="meta"><div><b>Tempoh</b><span class="deadline">17 Ogos – 11 September 2026</span></div><div><b>Tempat</b><span>Kelas masing-masing</span></div><div><b>Kaedah</b><span>Hias dan kemaskan kelas. Penilaian: info/sudut kemerdekaan, kebersihan, kekemasan/keceriaan dan kreativiti.</span></div><div><b>PIC (Seliaan)</b><span class="pic">Cg Roshaila</span></div></div>
      <a class="drive" href="https://drive.google.com/file/d/1ILVoz3jAvMaZWSTWtk8BJGqv0My_3Qnp/view?usp=drivesdk" target="_blank" rel="noopener">Buka poster asal ↗</a>
     </div>
    </article>
@@ -171,35 +176,35 @@ footer{margin-top:25px;background:var(--navy);color:#fff;text-align:center;paddi
    <article class="card" data-date="2026-08-21" data-title="Seni Kraf Rama-rama Merdeka">
     <div class="img-wrap"><img loading="lazy" src="assets/t1-rama-rama.jpg" alt="Seni Kraf Rama-rama Merdeka"></div>
     <div class="info"><h3>Seni Kraf Rama-rama Merdeka</h3><div class="badges"><span class="badge face">Bersemuka — kelas</span></div>
-     <div class="meta"><div><b>Tarikh</b><span class="deadline">21 Ogos 2026</span></div><div><b>Masa</b><span>10:30 pagi – 12:00 tengah hari</span></div><div><b>Tempat</b><span>Kelas masing-masing</span></div><div><b>Kaedah</b><span>Dijalankan bersama guru mata pelajaran semasa. Bawa bahan seperti dalam poster.</span></div></div>
+     <div class="meta"><div><b>Tarikh</b><span class="deadline">21 Ogos 2026</span></div><div><b>Masa</b><span>10:30 pagi – 12:00 tengah hari</span></div><div><b>Tempat</b><span>Kelas masing-masing</span></div><div><b>Kaedah</b><span>Dijalankan bersama guru mata pelajaran semasa. Bawa bahan seperti dalam poster.</span></div><div><b>PIC (Seliaan)</b><span class="pic">Ustazah Rafidah</span></div></div>
      <a class="drive" href="https://drive.google.com/file/d/1juI2NKxdMk61LUgbZTSnikhUEGgs20xo/view?usp=drivesdk" target="_blank" rel="noopener">Buka poster asal ↗</a>
     </div>
    </article>
    <article class="card" data-date="2026-08-26" data-title="Mewarna Poster Kemerdekaan">
     <div class="img-wrap"><img loading="lazy" src="assets/t1-poster.jpg" alt="Mewarna Poster Kemerdekaan"></div>
     <div class="info"><h3>Mewarna Poster Kemerdekaan</h3><div class="badges"><span class="badge face">Bersemuka — kelas</span></div>
-     <div class="meta"><div><b>Tarikh</b><span class="deadline">26 Ogos 2026</span></div><div><b>Peserta</b><span>Tahun 1, 2 dan 3</span></div><div><b>Tempat</b><span>Kelas masing-masing</span></div><div><b>Kaedah</b><span>Mewarna poster; murid membawa pensel warna sendiri.</span></div></div>
+     <div class="meta"><div><b>Tarikh</b><span class="deadline">26 Ogos 2026</span></div><div><b>Peserta</b><span>Tahun 1, 2 dan 3</span></div><div><b>Tempat</b><span>Kelas masing-masing</span></div><div><b>Kaedah</b><span>Mewarna poster; murid membawa pensel warna sendiri.</span></div><div><b>PIC (Seliaan)</b><span class="pic">Cg Mariam</span></div></div>
      <a class="drive" href="https://drive.google.com/file/d/1Pjml9Be0k4i54E3PtFEX4dnPMfec9UmH/view?usp=drivesdk" target="_blank" rel="noopener">Buka poster asal ↗</a>
     </div>
    </article>
    <article class="card" data-date="2026-09-04" data-title="Pakaian Beragam Tahap 1" data-online="true">
     <div class="img-wrap"><img loading="lazy" src="assets/t1-pakaian.jpg" alt="Pakaian Beragam Tahap 1"></div>
     <div class="info"><h3>Pakaian Beragam Tahap 1</h3><div class="badges"><span class="badge online">Online — gambar</span></div>
-     <div class="meta"><div><b>Dateline</b><span class="deadline">4 September 2026</span></div><div><b>Tempat</b><span>Online / dari rumah</span></div><div><b>Kaedah</b><span>Pakai kostum kreatif, ambil 1 gambar jelas dan hantar melalui Telegram pada pautan/QR poster.</span></div></div>
-     <a class="drive" href="https://drive.google.com/file/d/1VUlBnMNz3soC7MVOyAmX2ZpC4Z8vZY6T/view?usp=drivesdk" target="_blank" rel="noopener">Buka poster asal ↗</a>
+     <div class="meta"><div><b>Dateline</b><span class="deadline">4 September 2026</span></div><div><b>Tempat</b><span>Online / dari rumah</span></div><div><b>Kaedah</b><span>Pakai kostum kreatif, ambil 1 gambar jelas dan hantar melalui Telegram pada pautan/QR poster.</span></div><div><b>PIC (Seliaan)</b><span class="pic">Cg Maizan</span></div></div>
+     <a class="action-link whatsapp-link" href="https://wa.me/601113107925" target="_blank" rel="noopener">💬 WhatsApp Cg Maizan</a><br><a class="drive" href="https://drive.google.com/file/d/1VUlBnMNz3soC7MVOyAmX2ZpC4Z8vZY6T/view?usp=drivesdk" target="_blank" rel="noopener">Buka poster asal ↗</a>
     </div>
    </article>
    <article class="card" data-date="2026-09-08" data-title="Mewarna Bahasa Arab">
     <div class="img-wrap"><img loading="lazy" src="assets/t1-mewarna-arab.jpg" alt="Mewarna Bahasa Arab"></div>
     <div class="info"><h3>Mewarna Bahasa Arab</h3><div class="badges"><span class="badge face">Bersemuka — kelas</span></div>
-     <div class="meta"><div><b>Tarikh</b><span class="deadline">8 September 2026</span></div><div><b>Masa</b><span>8:00 – 9:00 pagi</span></div><div><b>Tempat</b><span>Kelas masing-masing</span></div><div><b>Kaedah</b><span>Bersemuka; bawa alat mewarna sendiri.</span></div></div>
+     <div class="meta"><div><b>Tarikh</b><span class="deadline">8 September 2026</span></div><div><b>Masa</b><span>8:00 – 9:00 pagi</span></div><div><b>Tempat</b><span>Kelas masing-masing</span></div><div><b>Kaedah</b><span>Bersemuka; bawa alat mewarna sendiri.</span></div><div><b>PIC (Seliaan)</b><span class="pic">Ustazah Rifqah</span></div></div>
      <a class="drive" href="https://drive.google.com/file/d/1Q1areAhXhfw-yAoTJOx1m-tvJJrNLRO_/view?usp=drivesdk" target="_blank" rel="noopener">Buka poster asal ↗</a>
     </div>
    </article>
    <article class="card" data-date="2026-09-09" data-title="Jawi Merdeka">
     <div class="img-wrap"><img loading="lazy" src="assets/t1-jawi.jpg" alt="Jawi Merdeka"></div>
     <div class="info"><h3>Jawi Merdeka</h3><div class="badges"><span class="badge face">Bersemuka — kelas</span></div>
-     <div class="meta"><div><b>Tarikh</b><span class="deadline">9 September 2026</span></div><div><b>Masa</b><span>8:40 – 9:40 pagi</span></div><div><b>Tempat</b><span>Kelas masing-masing</span></div><div><b>Kaedah</b><span>Menulis teks Jawi dan menjawikan perkataan Rumi; dipantau guru mata pelajaran berkaitan.</span></div></div>
+     <div class="meta"><div><b>Tarikh</b><span class="deadline">9 September 2026</span></div><div><b>Masa</b><span>8:40 – 9:40 pagi</span></div><div><b>Tempat</b><span>Kelas masing-masing</span></div><div><b>Kaedah</b><span>Menulis teks Jawi dan menjawikan perkataan Rumi; dipantau guru mata pelajaran berkaitan.</span></div><div><b>PIC (Seliaan)</b><span class="pic">Ustazah Azlina</span></div></div>
      <a class="drive" href="https://drive.google.com/file/d/1eo-PoZxTk3RdR28SPsDPUMDuETC0rmP0/view?usp=drivesdk" target="_blank" rel="noopener">Buka poster asal ↗</a>
     </div>
    </article>
@@ -219,60 +224,70 @@ footer{margin-top:25px;background:var(--navy);color:#fff;text-align:center;paddi
    <article class="card" data-date="2026-08-26" data-title="Poster Digital Tahap 2">
     <div class="img-wrap"><img loading="lazy" src="assets/t2-poster-digital.jpg" alt="Poster Digital Tahap 2"></div>
     <div class="info"><h3>Poster Digital</h3><div class="badges"><span class="badge face">Bersemuka — bilik khas</span></div>
-     <div class="meta"><div><b>Tarikh</b><span class="deadline">26 Ogos 2026</span></div><div><b>Masa</b><span>1:50 – 4:00 petang</span></div><div><b>Tempat</b><span>Makmal Komputer</span></div><div><b>Kaedah</b><span>Bersemuka; siapkan poster dalam tempoh ditetapkan dan hantar sebelum 4:00 petang.</span></div></div>
+     <div class="meta"><div><b>Tarikh</b><span class="deadline">26 Ogos 2026</span></div><div><b>Masa</b><span>1:50 – 4:00 petang</span></div><div><b>Tempat</b><span>Makmal Komputer</span></div><div><b>Kaedah</b><span>Bersemuka; siapkan poster dalam tempoh ditetapkan dan hantar sebelum 4:00 petang.</span></div><div><b>PIC (Seliaan)</b><span class="pic">Cg Syah</span></div></div>
      <a class="drive" href="https://drive.google.com/file/d/1Tg8txThj5-GvUKJUy_VChSScV4sapuxT/view?usp=drivesdk" target="_blank" rel="noopener">Buka poster asal ↗</a>
     </div>
    </article>
    <article class="card" data-date="2026-08-26" data-title="Kuiz Sejarah">
     <div class="img-wrap"><img loading="lazy" src="assets/t2-kuiz-sejarah.jpg" alt="Kuiz Sejarah Tahap 2"></div>
     <div class="info"><h3>Kuiz Sejarah</h3><div class="badges"><span class="badge face">Bersemuka — semasa PdP</span></div>
-     <div class="meta"><div><b>Tarikh</b><span class="deadline">26 Ogos 2026</span></div><div><b>Masa</b><span>7:40 – 8:40 pagi</span></div><div><b>Tempat</b><span>Semasa kelas / guru subjek semasa</span></div><div><b>Kaedah</b><span>Soalan diedar guru; masa menjawab 30 minit dan 5 terbaik dipilih.</span></div></div>
+     <div class="meta"><div><b>Tarikh</b><span class="deadline">26 Ogos 2026</span></div><div><b>Masa</b><span>7:40 – 8:40 pagi</span></div><div><b>Tempat</b><span>Semasa kelas / guru subjek semasa</span></div><div><b>Kaedah</b><span>Soalan diedar guru; masa menjawab 30 minit dan 5 terbaik dipilih.</span></div><div><b>PIC (Seliaan)</b><span class="pic">Teacher Hanim</span></div></div>
      <a class="drive" href="https://drive.google.com/file/d/1CTA66qmOa1PewoGEZ34tV_jUSa-ErzXn/view?usp=drivesdk" target="_blank" rel="noopener">Buka poster asal ↗</a>
     </div>
    </article>
    <article class="card" data-date="2026-08-28" data-title="Sajak Bahasa Arab" data-online="true">
     <div class="img-wrap"><img loading="lazy" src="assets/t2-sajak-arab.jpg" alt="Sajak Bahasa Arab"></div>
     <div class="info"><h3>Deklamasi Sajak Bahasa Arab</h3><div class="badges"><span class="badge online">Online — video</span></div>
-     <div class="meta"><div><b>Dateline</b><span class="deadline">28 Ogos 2026</span></div><div><b>Tempat</b><span>Online / rakaman video</span></div><div><b>Kaedah</b><span>Rakam video deklamasi sajak Bahasa Arab secara melintang, berdurasi 2–3 minit dan hantar melalui Telegram seperti arahan poster.</span></div></div>
+     <div class="meta"><div><b>Dateline</b><span class="deadline">28 Ogos 2026</span></div><div><b>Tempat</b><span>Online / rakaman video</span></div><div><b>Kaedah</b><span>Rakam video deklamasi sajak Bahasa Arab secara melintang, berdurasi 2–3 minit dan hantar melalui Telegram seperti arahan poster.</span></div><div><b>PIC (Seliaan)</b><span class="pic">Ustaz Kamarul Azmi</span></div></div>
      <div class="poem-callout"><strong>📖 PILIHAN SAJAK TELAH DISEDIAKAN</strong><span>Murid boleh memilih salah satu daripada 6 sajak yang disediakan.</span><br><a class="poem-btn" href="assets/pilihan-sajak-bahasa-arab.pdf" target="_blank">KLIK UNTUK LIHAT PILIHAN SAJAK</a><div style="margin-top:7px;font-weight:800">Selamat berjaya. 😊</div></div>
-     <a class="drive" href="https://drive.google.com/file/d/12vtGjtS2yg8-gmy3QCi84hlYhwbZ4_8g/view?usp=drivesdk" target="_blank" rel="noopener">Buka poster asal ↗</a>
+     <a class="action-link" href="https://t.me/+os3Vp6ObMoQ4MzJl" target="_blank" rel="noopener">📤 Hantar Video Sajak Bahasa Arab</a><br><a class="drive" href="https://drive.google.com/file/d/12vtGjtS2yg8-gmy3QCi84hlYhwbZ4_8g/view?usp=drivesdk" target="_blank" rel="noopener">Buka poster asal ↗</a>
     </div>
    </article>
    <article class="card" data-date="2026-09-04" data-title="Pakaian Beragam Tahap 2" data-online="true">
     <div class="img-wrap"><img loading="lazy" src="assets/t2-pakaian.jpg" alt="Pakaian Beragam Tahap 2"></div>
     <div class="info"><h3>Pakaian Beragam Tahap 2</h3><div class="badges"><span class="badge online">Online — gambar</span></div>
-     <div class="meta"><div><b>Dateline</b><span class="deadline">4 September 2026</span></div><div><b>Tempat</b><span>Online / dari rumah</span></div><div><b>Kaedah</b><span>Hantar gambar melalui Telegram seperti pada poster. 10 pemenang dipilih; peragaan pentas pada 15 September.</span></div></div>
-     <a class="drive" href="https://drive.google.com/file/d/1U-E7N1P5t--7n0e3aCES-blJjvqX7Udo/view?usp=drivesdk" target="_blank" rel="noopener">Buka poster asal ↗</a>
+     <div class="meta"><div><b>Dateline</b><span class="deadline">4 September 2026</span></div><div><b>Tempat</b><span>Online / dari rumah</span></div><div><b>Kaedah</b><span>Hantar gambar melalui Telegram seperti pada poster. 10 pemenang dipilih; peragaan pentas pada 15 September.</span></div><div><b>PIC (Seliaan)</b><span class="pic">Teacher Elly</span></div></div>
+     <a class="action-link" href="https://t.me/PBMERDEKA2026" target="_blank" rel="noopener">📤 Hantar Penyertaan Pakaian Beragam</a><br><a class="drive" href="https://drive.google.com/file/d/1U-E7N1P5t--7n0e3aCES-blJjvqX7Udo/view?usp=drivesdk" target="_blank" rel="noopener">Buka poster asal ↗</a>
     </div>
    </article>
    <article class="card" data-date="2026-09-08" data-title="Diorama Kemerdekaan">
     <div class="img-wrap"><img loading="lazy" src="assets/t2-diorama.jpg" alt="Diorama Kemerdekaan"></div>
     <div class="info"><h3>Diorama Kemerdekaan</h3><div class="badges"><span class="badge face">Serahan fizikal — bilik khas</span></div>
-     <div class="meta"><div><b>Tarikh</b><span class="deadline">8 September 2026 · 7:40 pagi</span></div><div><b>Tempat</b><span>Bilik PSV</span></div><div><b>Kaedah</b><span>Siapkan karya dari rumah dan bawa untuk serahan pada tarikh ditetapkan.</span></div></div>
+     <div class="meta"><div><b>Tarikh</b><span class="deadline">8 September 2026 · 7:40 pagi</span></div><div><b>Tempat</b><span>Bilik PSV</span></div><div><b>Kaedah</b><span>Siapkan karya dari rumah dan bawa untuk serahan pada tarikh ditetapkan.</span></div><div><b>PIC (Seliaan)</b><span class="pic">Cg Salmi</span></div></div>
      <a class="drive" href="https://drive.google.com/file/d/1BDtpjrdFO5d8bA4Xj10YLX2JqV9OAEaw/view?usp=drivesdk" target="_blank" rel="noopener">Buka poster asal ↗</a>
     </div>
    </article>
    <article class="card" data-date="2026-09-10" data-title="Buku Skrap Merdeka">
     <div class="img-wrap"><img loading="lazy" src="assets/t2-buku-skrap.jpg" alt="Buku Skrap Merdeka"></div>
     <div class="info"><h3>Buku Skrap Merdeka</h3><div class="badges"><span class="badge face">Serahan fizikal</span></div>
-     <div class="meta"><div><b>Dateline</b><span class="deadline">10 September 2026</span></div><div><b>Tempat</b><span>Serah kepada Teacher Zashima / Teacher Adleen (PSS)</span></div><div><b>Kaedah</b><span>Buku skrap fizikal saiz A4 bertema Merdeka/Malaysia/sejarah tempatan.</span></div></div>
+     <div class="meta"><div><b>Dateline</b><span class="deadline">10 September 2026</span></div><div><b>Tempat</b><span>Serah kepada Teacher Zashima / Teacher Adleen (PSS)</span></div><div><b>Kaedah</b><span>Buku skrap fizikal saiz A4 bertema Merdeka/Malaysia/sejarah tempatan.</span></div><div><b>PIC (Seliaan)</b><span class="pic">Teacher Shima & Teacher Adleen</span></div></div>
      <a class="drive" href="https://drive.google.com/file/d/1pEwrANgXFqOFKOeq__ZLicBDMkwOveOc/view?usp=drivesdk" target="_blank" rel="noopener">Buka poster asal ↗</a>
     </div>
    </article>
-   <article class="card undated" data-title="TikTok Merdeka" data-online="true">
+   <article class="card" data-date="2026-09-10" data-title="TikTok Merdeka" data-online="true">
     <div class="img-wrap"><img loading="lazy" src="assets/t2-tiktok.jpg" alt="TikTok Merdeka"></div>
     <div class="info"><h3>TikTok Merdeka</h3><div class="badges"><span class="badge online">Online — video</span></div>
-     <div class="meta"><div><b>Dateline</b><span>Rujuk makluman / kalendar sekolah</span></div><div><b>Tempat</b><span>—</span></div><div><b>Kaedah</b><span>Video maksimum 30 saat, rakaman sendiri, melintang, satu penyertaan setiap murid; hantar pautan TikTok melalui QR.</span></div></div>
+     <div class="meta"><div><b>Dateline</b><span class="deadline">10 September 2026 · sebelum / pada jam 12:00 tengah hari</span></div><div><b>Tempat</b><span>—</span></div><div><b>Kaedah</b><span>Video maksimum 30 saat, rakaman sendiri, melintang, satu penyertaan setiap murid; hantar pautan TikTok melalui QR.</span></div><div><b>PIC (Seliaan)</b><span class="pic">Teacher Shima</span></div></div>
      <a class="drive" href="https://drive.google.com/file/d/1tQSdJ6JmJEnFp58ZYc_tsDvlAxJrLZEf/view?usp=drivesdk" target="_blank" rel="noopener">Buka poster asal ↗</a>
     </div>
    </article>
    <article class="card undated" data-title="Koir Lagu Patriotik">
     <div class="img-wrap"><img loading="lazy" src="assets/t2-koir.jpg" alt="Koir Lagu Patriotik Tahap 2"></div>
     <div class="info"><h3>Koir Lagu Patriotik</h3><div class="badges"><span class="badge face">Bersemuka</span></div>
-     <div class="meta"><div><b>Tarikh</b><span>Akan dimaklumkan</span></div><div><b>Peserta</b><span>Semua kelas Tahap 2 · 10–20 peserta</span></div><div><b>Tempat</b><span>Akan dimaklumkan</span></div><div><b>Kaedah</b><span>2 lagu: “Tanggal 31 Ogos” (wajib) + 1 lagu patriotik pilihan.</span></div></div>
+     <div class="meta"><div><b>Tarikh</b><span>Akan dimaklumkan</span></div><div><b>Peserta</b><span>Semua kelas Tahap 2 · 10–20 peserta</span></div><div><b>Tempat</b><span>Akan dimaklumkan</span></div><div><b>Kaedah</b><span>2 lagu: “Tanggal 31 Ogos” (wajib) + 1 lagu patriotik pilihan.</span></div><div><b>PIC (Seliaan)</b><span class="pic">Teacher Afizah</span></div></div>
      <a class="drive" href="https://drive.google.com/file/d/1tBapmTi42gxDqrcMQyv8tYuTlKppS-VE/view?usp=drivesdk" target="_blank" rel="noopener">Buka poster asal ↗</a>
     </div>
    </article>
+  
+   <article class="card placeholder-card undated" data-title="Khat Merdeka Tahap 2">
+    <div class="img-wrap" style="min-height:260px;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px">
+      <div><div style="font-size:48px">🖋️</div><div style="font-weight:950;font-size:20px;color:#243b70;margin-top:8px">KHAT MERDEKA<br>TAHAP 2</div><div style="margin-top:8px;color:#667085">Poster menyusul kemudian</div></div>
+    </div>
+    <div class="info"><h3>Khat Merdeka Tahap 2</h3><div class="badges"><span class="badge face">Maklumat lanjut menyusul</span></div>
+     <div class="meta"><div><b>Tarikh</b><span>Akan dikemaskini</span></div><div><b>Tempat</b><span>Akan dikemaskini</span></div><div><b>Kaedah</b><span>Maklumat dan poster rasmi akan ditambah kemudian.</span></div><div><b>PIC (Seliaan)</b><span class="pic">Ustazah Farah</span></div></div>
+    </div>
+   </article>
+
   </div>
  </section>
 </main>
