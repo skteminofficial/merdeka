@@ -35,17 +35,20 @@ h2{margin:0;font-size:clamp(23px,4vw,34px)}.sub{color:var(--muted);font-size:14p
 .notice .bell{font-size:28px}.notice strong{display:block}.next-name{color:#a30e18}
 .calendar-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .poster-shell,.card{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 8px 24px #162a4d12}
-.poster-shell img{width:100%;display:block}
+.poster-shell{padding:10px;background:linear-gradient(145deg,#fff,#f3f7ff);border:2px solid #d8e3f7}
+.poster-shell img{width:100%;display:block;border-radius:12px;border:4px solid white;box-shadow:0 5px 15px #10234a20}
 .poster-shell .cap{padding:11px 13px;font-weight:800}
 .section-head{display:flex;gap:10px;align-items:center;margin-bottom:14px}.pill{font-size:12px;font-weight:900;padding:6px 10px;border-radius:999px;color:white;background:var(--blue)}
 .pill.red{background:var(--red)}.pill.gold{background:#9c6c00}
 .cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
-.card{display:grid;grid-template-columns:42% 58%;min-height:300px;transition:.2s transform,.2s box-shadow}
+.card{display:grid;grid-template-columns:minmax(220px,38%) 1fr;min-height:320px;transition:.2s transform,.2s box-shadow;padding:10px;gap:4px;background:linear-gradient(145deg,#fff,#fbfdff);border:2px solid #dbe5f5}
 .card:hover{transform:translateY(-2px);box-shadow:0 12px 30px #162a4d20}
-.card .img-wrap{background:#e8eef8;position:relative;min-height:100%}
-.card img{width:100%;height:100%;object-fit:cover;display:block}
-.card .info{padding:16px}.card h3{font-size:20px;line-height:1.15;margin:0 0 9px}
-.meta{display:grid;gap:7px;font-size:14px}.meta div{display:flex;gap:8px}.meta b{min-width:78px}
+.card .img-wrap{background:linear-gradient(145deg,#edf3ff,#fff7e3);position:relative;min-height:0;border-radius:14px;padding:9px;border:1px solid #d9e2f1;display:flex;align-items:flex-start;justify-content:center}
+.card img{width:100%;height:auto;max-height:430px;object-fit:contain;display:block;border-radius:9px;border:4px solid #fff;box-shadow:0 5px 15px #0a1c4024}
+.card .info{padding:12px 15px 15px}.card h3{font-size:20px;line-height:1.15;margin:0 0 9px}
+.card .info:before{content:"RINGKASAN PERTANDINGAN";display:inline-block;font-size:10px;letter-spacing:.08em;font-weight:950;color:#fff;background:var(--navy);padding:5px 8px;border-radius:999px;margin-bottom:9px}
+.meta{display:grid;gap:7px;font-size:14px;background:#f7f9fd;border:1px solid #e0e7f2;border-radius:12px;padding:11px}
+.meta div{display:grid;grid-template-columns:82px 1fr;gap:8px;align-items:start}.meta b{min-width:0;color:#243b70}
 .badges{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}.badge{font-size:11px;font-weight:850;border-radius:999px;padding:5px 8px;background:#edf2ff;color:#233b78}
 .badge.online{background:#e9f9f0;color:#17663b}.badge.face{background:#fff1e5;color:#914600}
 .drive{display:inline-block;margin-top:12px;text-decoration:none;color:var(--blue);font-weight:800;font-size:13px}
@@ -65,10 +68,16 @@ footer{margin-top:25px;background:var(--navy);color:#fff;text-align:center;paddi
 @media(max-width:850px){.cards{grid-template-columns:1fr}.card{grid-template-columns:39% 61%}}
 @media(max-width:640px){
 .calendar-grid,.general{grid-template-columns:1fr}.hero .inner{padding-top:25px}
-.card{display:block}.card .img-wrap{height:auto}.card img{height:auto;object-fit:contain}.card .info{padding:14px}
+.card{display:block;padding:9px}.card .img-wrap{height:310px;overflow:hidden;align-items:center}.card img{width:100%;height:100%;max-height:292px;object-fit:contain}.card .info{padding:14px 7px 8px}
+.meta div{grid-template-columns:76px 1fr}
 .cards{gap:14px}.title-row{align-items:start;flex-direction:column}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.card.nearest,.titem.near{animation:none}}
+
+.poem-callout{margin-top:12px;padding:13px;border-radius:14px;background:linear-gradient(135deg,#fff4bf,#fff);border:2px solid var(--yellow);text-align:center}
+.poem-callout strong{display:block;color:#8b2500;margin-bottom:5px}
+.poem-btn{display:inline-block;margin-top:7px;padding:9px 13px;border-radius:999px;background:var(--red);color:white;text-decoration:none;font-size:13px;font-weight:900;box-shadow:0 4px 10px #b1112030}
+
 </style>
 </head>
 <body>
@@ -128,7 +137,7 @@ footer{margin-top:25px;background:var(--navy);color:#fff;text-align:center;paddi
    <article class="card" data-date="2026-08-23" data-title="Lagu Patriotik Solo" data-online="true">
     <div class="img-wrap"><img loading="lazy" src="assets/lagu-patriotik-solo.jpg" alt="Pertandingan Lagu Patriotik Solo"></div>
     <div class="info"><h3>Lagu Patriotik (Solo)</h3><div class="badges"><span class="badge online">Online — video</span></div>
-     <div class="meta"><div><b>Dateline</b><span class="deadline">23 Ogos 2026</span></div><div><b>Peserta</b><span>Semua murid, pra sekolah hingga Tahun 6</span></div><div><b>Tempat</b><span>—</span></div><div><b>Kaedah</b><span>Rakaman video melintang, gambar penuh badan, muzik minus one; hantar melalui Telegram.</span></div></div>
+     <div class="meta"><div><b>Dateline</b><span class="deadline">23 Ogos 2026</span></div><div><b>Peserta</b><span>Semua murid, pra sekolah hingga Tahun 6</span></div><div><b>Tempat</b><span>Online / rakaman dari rumah</span></div><div><b>Kaedah</b><span>Rakaman video melintang, gambar penuh badan, muzik minus one; hantar melalui Telegram seperti arahan poster.</span></div></div>
      <a class="drive" href="https://drive.google.com/file/d/1mGqtiOQ5I8Al7aIeOJw5A8zEa-wvXhhR/view?usp=drivesdk" target="_blank" rel="noopener">Buka poster asal ↗</a>
     </div>
    </article>
@@ -142,7 +151,7 @@ footer{margin-top:25px;background:var(--navy);color:#fff;text-align:center;paddi
    <article class="card" data-date="2026-09-07" data-title="Basikal Berhias Merdeka" data-online="true">
     <div class="img-wrap"><img loading="lazy" src="assets/basikal-berhias.jpg" alt="Pertandingan Basikal Berhias Merdeka"></div>
     <div class="info"><h3>Basikal Berhias Merdeka</h3><div class="badges"><span class="badge online">Online — gambar</span></div>
-     <div class="meta"><div><b>Dateline</b><span class="deadline">7 September 2026</span></div><div><b>Peserta</b><span>Murid Tahap 1</span></div><div><b>Tempat</b><span>—</span></div><div><b>Kaedah</b><span>Hias basikal di rumah; hantar 2 gambar melalui Telegram: basikal dan peserta bersama basikal.</span></div></div>
+     <div class="meta"><div><b>Dateline</b><span class="deadline">7 September 2026</span></div><div><b>Peserta</b><span>Murid Tahap 1</span></div><div><b>Tempat</b><span>Di rumah</span></div><div><b>Kaedah</b><span>Hias basikal di rumah; hantar 2 gambar melalui Telegram: basikal dan peserta bersama basikal.</span></div></div>
      <a class="drive" href="https://drive.google.com/file/d/1pp_PVcqNUIqZAUwV5D7eCEmwUCJvbuBF/view?usp=drivesdk" target="_blank" rel="noopener">Buka poster asal ↗</a>
     </div>
    </article>
@@ -176,7 +185,7 @@ footer{margin-top:25px;background:var(--navy);color:#fff;text-align:center;paddi
    <article class="card" data-date="2026-09-04" data-title="Pakaian Beragam Tahap 1" data-online="true">
     <div class="img-wrap"><img loading="lazy" src="assets/t1-pakaian.jpg" alt="Pakaian Beragam Tahap 1"></div>
     <div class="info"><h3>Pakaian Beragam Tahap 1</h3><div class="badges"><span class="badge online">Online — gambar</span></div>
-     <div class="meta"><div><b>Dateline</b><span class="deadline">4 September 2026</span></div><div><b>Tempat</b><span>—</span></div><div><b>Kaedah</b><span>Pakai kostum kreatif, ambil 1 gambar jelas dan hantar melalui Telegram pada pautan/QR poster.</span></div></div>
+     <div class="meta"><div><b>Dateline</b><span class="deadline">4 September 2026</span></div><div><b>Tempat</b><span>Online / dari rumah</span></div><div><b>Kaedah</b><span>Pakai kostum kreatif, ambil 1 gambar jelas dan hantar melalui Telegram pada pautan/QR poster.</span></div></div>
      <a class="drive" href="https://drive.google.com/file/d/1VUlBnMNz3soC7MVOyAmX2ZpC4Z8vZY6T/view?usp=drivesdk" target="_blank" rel="noopener">Buka poster asal ↗</a>
     </div>
    </article>
@@ -224,15 +233,15 @@ footer{margin-top:25px;background:var(--navy);color:#fff;text-align:center;paddi
    <article class="card" data-date="2026-08-28" data-title="Sajak Bahasa Arab" data-online="true">
     <div class="img-wrap"><img loading="lazy" src="assets/t2-sajak-arab.jpg" alt="Sajak Bahasa Arab"></div>
     <div class="info"><h3>Deklamasi Sajak Bahasa Arab</h3><div class="badges"><span class="badge online">Online — video</span></div>
-     <div class="meta"><div><b>Dateline</b><span class="deadline">28 Ogos 2026</span></div><div><b>Tempat</b><span>—</span></div><div><b>Kaedah</b><span>Rakaman melintang 2–3 minit dan dihantar melalui Telegram. Pilih tajuk/tema seperti pada poster.</span></div></div>
-     <a class="drive" href="https://drive.google.com/file/d/12vtGjtS2yg8-gmy3QCi84hlYhwbZ4_8g/view?usp=drivesdk" target="_blank" rel="noopener">Buka poster asal ↗</a><br>
-     <a class="drive" href="https://drive.google.com/file/d/1vczqzroO9sb4NkJM4CDs3NKG_BMh3j_H/view?usp=drivesdk" target="_blank" rel="noopener">Pilihan tajuk sajak (PDF) ↗</a>
+     <div class="meta"><div><b>Dateline</b><span class="deadline">28 Ogos 2026</span></div><div><b>Tempat</b><span>Online / rakaman video</span></div><div><b>Kaedah</b><span>Rakam video deklamasi sajak Bahasa Arab secara melintang, berdurasi 2–3 minit dan hantar melalui Telegram seperti arahan poster.</span></div></div>
+     <div class="poem-callout"><strong>📖 PILIHAN SAJAK TELAH DISEDIAKAN</strong><span>Murid boleh memilih salah satu daripada 6 sajak yang disediakan.</span><br><a class="poem-btn" href="assets/pilihan-sajak-bahasa-arab.pdf" target="_blank">KLIK UNTUK LIHAT PILIHAN SAJAK</a><div style="margin-top:7px;font-weight:800">Selamat berjaya. 😊</div></div>
+     <a class="drive" href="https://drive.google.com/file/d/12vtGjtS2yg8-gmy3QCi84hlYhwbZ4_8g/view?usp=drivesdk" target="_blank" rel="noopener">Buka poster asal ↗</a>
     </div>
    </article>
    <article class="card" data-date="2026-09-04" data-title="Pakaian Beragam Tahap 2" data-online="true">
     <div class="img-wrap"><img loading="lazy" src="assets/t2-pakaian.jpg" alt="Pakaian Beragam Tahap 2"></div>
     <div class="info"><h3>Pakaian Beragam Tahap 2</h3><div class="badges"><span class="badge online">Online — gambar</span></div>
-     <div class="meta"><div><b>Dateline</b><span class="deadline">4 September 2026</span></div><div><b>Tempat</b><span>—</span></div><div><b>Kaedah</b><span>Hantar gambar melalui Telegram seperti pada poster. 10 pemenang dipilih; peragaan pentas pada 15 September.</span></div></div>
+     <div class="meta"><div><b>Dateline</b><span class="deadline">4 September 2026</span></div><div><b>Tempat</b><span>Online / dari rumah</span></div><div><b>Kaedah</b><span>Hantar gambar melalui Telegram seperti pada poster. 10 pemenang dipilih; peragaan pentas pada 15 September.</span></div></div>
      <a class="drive" href="https://drive.google.com/file/d/1U-E7N1P5t--7n0e3aCES-blJjvqX7Udo/view?usp=drivesdk" target="_blank" rel="noopener">Buka poster asal ↗</a>
     </div>
    </article>
