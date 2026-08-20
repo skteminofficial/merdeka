@@ -30,7 +30,7 @@ h1{margin:6px 0 4px;font-size:clamp(29px,6vw,56px);line-height:1.02}.theme{font-
 .quick a:first-child{background:var(--navy);color:white}
 section{scroll-margin-top:72px;padding:27px 0}
 .title-row{display:flex;align-items:end;justify-content:space-between;gap:14px;margin-bottom:13px}
-h2{margin:0;font-size:clamp(23px,4vw,34px)}.sub{color:var(--muted);font-size:14px}
+h2{margin:0;font-size:clamp(22px,3vw,30px);color:#0f2f72}.sub{color:var(--muted);font-size:14px}
 .notice{margin-top:18px;background:#fff5ca;border:2px solid var(--yellow);border-radius:18px;padding:14px 16px;display:flex;gap:12px;align-items:center;box-shadow:0 7px 20px #6d5b0017}
 .notice .bell{font-size:28px}.notice strong{display:block}.next-name{color:#a30e18}
 .calendar-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
@@ -40,18 +40,18 @@ h2{margin:0;font-size:clamp(23px,4vw,34px)}.sub{color:var(--muted);font-size:14p
 .poster-shell .cap{padding:11px 13px;font-weight:800}
 .section-head{display:flex;gap:10px;align-items:center;margin-bottom:14px}.pill{font-size:12px;font-weight:900;padding:6px 10px;border-radius:999px;color:white;background:var(--blue)}
 .pill.red{background:var(--red)}.pill.gold{background:#9c6c00}
-.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
-.card{display:grid;grid-template-columns:minmax(220px,38%) 1fr;min-height:320px;transition:.2s transform,.2s box-shadow;padding:10px;gap:4px;background:linear-gradient(145deg,#fff,#fbfdff);border:2px solid #dbe5f5}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.card{display:grid;grid-template-columns:38% 62%;min-height:245px;transition:.2s transform,.2s box-shadow;padding:8px;gap:8px;background:#fff;border:1px solid #d9e3f2;border-radius:16px}
 .card:hover{transform:translateY(-2px);box-shadow:0 12px 30px #162a4d20}
-.card .img-wrap{background:linear-gradient(145deg,#edf3ff,#fff7e3);position:relative;min-height:0;border-radius:14px;padding:9px;border:1px solid #d9e2f1;display:flex;align-items:flex-start;justify-content:center}
-.card img{width:100%;height:auto;max-height:430px;object-fit:contain;display:block;border-radius:9px;border:4px solid #fff;box-shadow:0 5px 15px #0a1c4024}
-.card .info{padding:14px 16px 16px;text-align:left}.card h3{font-size:20px;line-height:1.15;margin:0 0 9px}
+.card .img-wrap{background:#f6f8fc;position:relative;min-height:0;border-radius:12px;padding:5px;border:1px solid #e2e8f2;display:flex;align-items:flex-start;justify-content:center;overflow:hidden}
+.card img{width:100%;height:100%;max-height:245px;object-fit:cover;object-position:top center;display:block;border-radius:9px;box-shadow:none}
+.card .info{padding:6px 6px 8px;text-align:left}.card h3{font-size:16px;line-height:1.15;margin:0 0 7px;color:#0f2f72}
 .card .info:before{content:none}
-.meta{display:grid;gap:8px;font-size:14px;background:#f7f9fd;border:1px solid #e0e7f2;border-radius:12px;padding:12px;text-align:left}
-.meta div{display:grid;grid-template-columns:120px minmax(0,1fr);gap:10px;align-items:start}.meta b{min-width:0;color:#243b70;text-align:left}.meta span{text-align:left}
-.badges{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}.badge{font-size:11px;font-weight:850;border-radius:999px;padding:5px 8px;background:#edf2ff;color:#233b78}
+.meta{display:grid;gap:5px;font-size:12px;background:transparent;border:0;border-radius:0;padding:0;text-align:left}
+.meta div{display:grid;grid-template-columns:78px minmax(0,1fr);gap:6px;align-items:start;padding-bottom:4px;border-bottom:1px solid #edf0f5}.meta div:last-child{border-bottom:0}.meta b{min-width:0;color:#243b70;text-align:left}.meta span{text-align:left}
+.badges{display:flex;flex-wrap:wrap;gap:5px;margin:6px 0 8px}.badge{font-size:10px;font-weight:850;border-radius:999px;padding:4px 7px;background:#edf2ff;color:#233b78}
 .badge.online{background:#e9f9f0;color:#17663b}.badge.face{background:#fff1e5;color:#914600}
-.drive{display:inline-block;margin-top:12px;text-decoration:none;color:var(--blue);font-weight:800;font-size:13px}
+.drive{display:inline-block;margin-top:7px;text-decoration:none;color:var(--blue);font-weight:800;font-size:11px}
 .deadline{font-weight:900;color:#b01520}
 .card.nearest{border:3px solid var(--yellow);animation:glow 1.15s ease-in-out infinite alternate}
 .card.nearest:before{content:var(--urgent-label,"⏰ TARIKH TERDEKAT");position:absolute;z-index:2;background:var(--red);color:white;font-weight:900;font-size:11px;padding:7px 10px;border-radius:0 0 10px 0}
@@ -62,12 +62,22 @@ h2{margin:0;font-size:clamp(23px,4vw,34px)}.sub{color:var(--muted);font-size:14p
 .titem.near{border:2px solid var(--yellow);animation:blinkText 1s steps(2,end) infinite}
 .tdate{font-weight:900;color:var(--red)}.tname{font-weight:750;font-size:13px;margin-top:4px}
 @keyframes blinkText{50%{opacity:.45}}
-.general{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+
 footer{margin-top:25px;background:var(--navy);color:#fff;text-align:center;padding:22px 15px;border-top:5px solid var(--yellow)}
 .small{font-size:12px;opacity:.8}
-@media(max-width:850px){.cards{grid-template-columns:1fr}.card{grid-template-columns:39% 61%}}
+@media(max-width:1050px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}}.card{grid-template-columns:39% 61%}}
 @media(max-width:640px){
-.calendar-grid,.general{grid-template-columns:1fr}.hero .inner{padding-top:25px}
+.calendar-grid{grid-template-columns:1fr}.hero .inner{padding-top:22px}
+.cards{grid-template-columns:1fr;gap:12px}
+.card{grid-template-columns:34% 66%;min-height:215px;padding:7px}
+.card .img-wrap{height:215px}
+.card img{height:100%;max-height:215px;object-fit:cover;object-position:top center}
+.card .info{padding:4px 5px}
+.card h3{font-size:15px}
+.meta{font-size:11px}
+.meta div{grid-template-columns:70px 1fr;gap:5px}
+.title-row{align-items:start;flex-direction:column}
+}.hero .inner{padding-top:25px}
 .card{display:block;padding:9px}.card .img-wrap{height:310px;overflow:hidden;align-items:center}.card img{width:100%;height:100%;max-height:292px;object-fit:contain}.card .info{padding:14px 7px 8px}
 .meta div{grid-template-columns:105px minmax(0,1fr)}
 .cards{gap:14px}.title-row{align-items:start;flex-direction:column}
@@ -83,6 +93,11 @@ footer{margin-top:25px;background:var(--navy);color:#fff;text-align:center;paddi
 .action-link{display:inline-block;margin-top:8px;padding:8px 11px;border-radius:10px;background:#eaf2ff;color:#123a83;text-decoration:none;font-size:13px;font-weight:850;border:1px solid #c9d9f7}
 .whatsapp-link{background:#eafaf0;color:#17633a;border-color:#bfe8cf}
 .placeholder-card{border-style:dashed;background:linear-gradient(145deg,#fffdf5,#f8fbff)}
+
+.competition-wrap{background:linear-gradient(180deg,#f7fbff,#fff);border:1px solid #dbe5f3;border-radius:20px;padding:16px;box-shadow:0 8px 24px #17315f0d}
+.section-head{padding:10px 12px;background:linear-gradient(90deg,#eef5ff,#fff7df);border-radius:14px;border:1px solid #dbe5f3}
+.card .info .action-link{font-size:10px;padding:6px 8px;margin-top:6px}
+
 </style>
 </head>
 <body>
@@ -119,19 +134,11 @@ footer{margin-top:25px;background:var(--navy);color:#fff;text-align:center;paddi
   </div>
   <h3 style="margin-bottom:8px">Tarikh seterusnya</h3>
   <div class="timeline" id="timeline"></div>
-  <div class="general">
-    <div class="poster-shell"><img loading="lazy" src="assets/aktiviti-bulan-merdeka.jpg" alt="Aktiviti sepanjang Bulan Kemerdekaan"><div class="cap">Aktiviti sepanjang Bulan Kemerdekaan</div></div>
-    <div style="background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px">
-      <h3 style="margin-top:0">📌 Cara guna laman ini</h3>
-      <p>Poster dipaparkan terus supaya tak perlu banyak klik. Gunakan menu di atas untuk lompat terus ke kategori murid.</p>
-      <p><b>Nota:</b> Maklumat ringkas di bawah diambil daripada poster. Jika ada perubahan oleh guru/penganjur, makluman terkini sekolah hendaklah diutamakan.</p>
-    </div>
-  </div>
- </section>
+  </section>
 
  <section id="semua">
   <div class="section-head"><span class="pill gold">SEMUA</span><div><h2>Semua — Tahap 1 & Tahap 2</h2><div class="sub">Terbuka kepada kedua-dua tahap / semua murid seperti dinyatakan pada poster.</div></div></div>
-  <div class="cards" data-sort>
+  <div class="competition-wrap"><div class="cards" data-sort>
    <article class="card" data-date="2026-08-23" data-title="Sajak Bahasa Melayu — Saringan Video" data-online="true">
     <div class="img-wrap"><img loading="lazy" src="assets/bahasa-melayu.png" alt="Pertandingan Bahasa Melayu"></div>
     <div class="info"><h3>Pertandingan Bahasa Melayu</h3><div class="badges"><span class="badge online">Sajak: Online → Akhir bersemuka</span><span class="badge face">Tulisan: Bersemuka</span></div>
@@ -167,12 +174,12 @@ footer{margin-top:25px;background:var(--navy);color:#fff;text-align:center;paddi
      <a class="drive" href="https://drive.google.com/file/d/1ILVoz3jAvMaZWSTWtk8BJGqv0My_3Qnp/view?usp=drivesdk" target="_blank" rel="noopener">Buka poster asal ↗</a>
     </div>
    </article>
-  </div>
+  </div></div>
  </section>
 
  <section id="tahap1">
   <div class="section-head"><span class="pill red">TAHAP 1</span><div><h2>Tahap 1 Sahaja</h2><div class="sub">Susunan mengikut tarikh pertandingan / tarikh tutup.</div></div></div>
-  <div class="cards" data-sort>
+  <div class="competition-wrap"><div class="cards" data-sort>
    <article class="card" data-date="2026-08-21" data-title="Seni Kraf Rama-rama Merdeka">
     <div class="img-wrap"><img loading="lazy" src="assets/t1-rama-rama.jpg" alt="Seni Kraf Rama-rama Merdeka"></div>
     <div class="info"><h3>Seni Kraf Rama-rama Merdeka</h3><div class="badges"><span class="badge face">Bersemuka — kelas</span></div>
@@ -208,12 +215,12 @@ footer{margin-top:25px;background:var(--navy);color:#fff;text-align:center;paddi
      <a class="drive" href="https://drive.google.com/file/d/1eo-PoZxTk3RdR28SPsDPUMDuETC0rmP0/view?usp=drivesdk" target="_blank" rel="noopener">Buka poster asal ↗</a>
     </div>
    </article>
-  </div>
+  </div></div>
  </section>
 
  <section id="tahap2">
   <div class="section-head"><span class="pill">TAHAP 2</span><div><h2>Tahap 2 Sahaja</h2><div class="sub">Susunan mengikut tarikh pertandingan / tarikh tutup.</div></div></div>
-  <div class="cards" data-sort>
+  <div class="competition-wrap"><div class="cards" data-sort>
    <article class="card" data-date="2026-08-20" data-title="Tulisan Berangkai Kemerdekaan">
     <div class="img-wrap"><img loading="lazy" src="assets/t2-tulisan.jpg" alt="Tulisan Berangkai Kemerdekaan"></div>
     <div class="info"><h3>Tulisan Berangkai Kemerdekaan</h3><div class="badges"><span class="badge face">Bersemuka — kelas</span></div>
@@ -288,7 +295,7 @@ footer{margin-top:25px;background:var(--navy);color:#fff;text-align:center;paddi
     </div>
    </article>
 
-  </div>
+  </div></div>
  </section>
 </main>
 
