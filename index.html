@@ -65,23 +65,119 @@ h2{margin:0;font-size:clamp(22px,3vw,30px);color:#0f2f72}.sub{color:var(--muted)
 
 footer{margin-top:25px;background:var(--navy);color:#fff;text-align:center;padding:22px 15px;border-top:5px solid var(--yellow)}
 .small{font-size:12px;opacity:.8}
-@media(max-width:1050px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}}.card{grid-template-columns:39% 61%}}
-@media(max-width:640px){
-.calendar-grid{grid-template-columns:1fr}.hero .inner{padding-top:22px}
-.cards{grid-template-columns:1fr;gap:12px}
-.card{grid-template-columns:34% 66%;min-height:215px;padding:7px}
-.card .img-wrap{height:215px}
-.card img{height:100%;max-height:215px;object-fit:cover;object-position:top center}
-.card .info{padding:4px 5px}
-.card h3{font-size:15px}
-.meta{font-size:11px}
-.meta div{grid-template-columns:70px 1fr;gap:5px}
-.title-row{align-items:start;flex-direction:column}
-}.hero .inner{padding-top:25px}
-.card{display:block;padding:9px}.card .img-wrap{height:310px;overflow:hidden;align-items:center}.card img{width:100%;height:100%;max-height:292px;object-fit:contain}.card .info{padding:14px 7px 8px}
-.meta div{grid-template-columns:105px minmax(0,1fr)}
-.cards{gap:14px}.title-row{align-items:start;flex-direction:column}
+
+@media(max-width:1050px){
+  .cards{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
+
+@media(max-width:700px){
+  html,body{max-width:100%;overflow-x:hidden}
+  .wrap{padding-left:10px;padding-right:10px}
+  .quick .wrap{padding-left:10px;padding-right:10px}
+  .quick a{font-size:12px;padding:8px 11px}
+
+  .calendar-grid{grid-template-columns:1fr}
+  .hero .inner{padding:22px 12px 20px}
+  .logo-school{width:72px;height:72px}
+  h1{font-size:30px}
+  .theme{font-size:16px}
+
+  .competition-wrap{padding:9px;border-radius:15px}
+  .cards{grid-template-columns:1fr;gap:14px;width:100%}
+
+  .card{
+    display:block;
+    width:100%;
+    min-width:0;
+    min-height:0;
+    padding:9px;
+    border-radius:15px;
+    overflow:hidden;
+  }
+
+  .card .img-wrap{
+    width:100%;
+    height:260px;
+    min-height:0;
+    padding:6px;
+    border-radius:12px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+    background:linear-gradient(145deg,#f5f8ff,#fffaf0);
+  }
+
+  .card img{
+    display:block;
+    width:100%;
+    height:100%;
+    max-height:248px;
+    object-fit:contain;
+    object-position:center;
+    border-radius:8px;
+  }
+
+  .card .info{
+    width:100%;
+    min-width:0;
+    padding:12px 6px 7px;
+    text-align:left;
+  }
+
+  .card h3{
+    font-size:18px;
+    line-height:1.2;
+    margin:0 0 8px;
+  }
+
+  .badges{margin:6px 0 9px}
+  .badge{font-size:10px}
+
+  .meta{
+    width:100%;
+    min-width:0;
+    font-size:13px;
+    gap:0;
+  }
+
+  .meta div{
+    display:grid;
+    grid-template-columns:105px minmax(0,1fr);
+    gap:8px;
+    width:100%;
+    min-width:0;
+    padding:7px 0;
+    border-bottom:1px solid #edf0f5;
+  }
+
+  .meta b,
+  .meta span{
+    min-width:0;
+    overflow-wrap:anywhere;
+    word-break:normal;
+  }
+
+  .deadline{white-space:normal}
+  .action-link,.drive,.poem-btn{
+    max-width:100%;
+    white-space:normal;
+    overflow-wrap:anywhere;
+  }
+
+  .poem-callout{padding:11px}
+  .title-row{align-items:flex-start;flex-direction:column}
+  .section-head{align-items:flex-start}
+}
+
+@media(max-width:390px){
+  .card .img-wrap{height:235px}
+  .card img{max-height:223px}
+  .meta{font-size:12px}
+  .meta div{grid-template-columns:92px minmax(0,1fr);gap:7px}
+  .quick a{font-size:11px}
+}
+
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.card.nearest,.titem.near{animation:none}}
 
 .poem-callout{margin-top:12px;padding:13px;border-radius:14px;background:linear-gradient(135deg,#fff4bf,#fff);border:2px solid var(--yellow);text-align:center}
