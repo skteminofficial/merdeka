@@ -205,6 +205,12 @@ footer{margin-top:25px;background:var(--navy);color:#fff;text-align:center;paddi
 .section-head{padding:10px 12px;background:linear-gradient(90deg,#eef5ff,#fff7df);border-radius:14px;border:1px solid #dbe5f3}
 .card .info .action-link{font-size:10px;padding:6px 8px;margin-top:6px}
 
+
+.card.finished{position:relative;opacity:.72;filter:saturate(.55);border:2px solid #c62828}
+.card.finished::after{content:"PERTANDINGAN TAMAT";position:absolute;top:50%;left:50%;width:min(86%,420px);padding:10px 14px;background:#c62828;color:#fff;font-size:13px;font-weight:950;letter-spacing:.08em;text-align:center;transform:translate(-50%,-50%) rotate(-8deg);box-shadow:0 4px 14px rgba(0,0,0,.28);z-index:5;pointer-events:none;border:2px solid rgba(255,255,255,.85);border-radius:6px}
+.finished-note{margin-top:9px;padding:9px 10px;border-radius:10px;background:#fff1f1;border:1px solid #efb3b3;color:#8f1d1d;font-size:12px;font-weight:850;text-align:left}
+@media(max-width:700px){.card.finished::after{top:50%;left:50%;width:84%;font-size:12px;padding:9px 10px;transform:translate(-50%,-50%) rotate(-7deg)}}
+
 </style>
 </head>
 <body>
@@ -428,6 +434,22 @@ document.querySelectorAll('[data-sort]').forEach(grid=>{
     const db=b.dataset.date ? new Date(b.dataset.date+'T00:00:00') : new Date('2999-01-01');
     return da-db;
   }).forEach(x=>grid.appendChild(x));
+});
+
+
+// Auto status tamat: hanya tarikh SEBELUM hari ini.
+dated.forEach(el=>{
+  const competitionDate = new Date(el.dataset.date+'T00:00:00');
+  if(competitionDate < today){
+    el.classList.add('finished');
+    const info = el.querySelector('.info');
+    if(info && !info.querySelector('.finished-note')){
+      const note = document.createElement('div');
+      note.className = 'finished-note';
+      note.innerHTML = '🔴 Penyertaan telah tamat. Pemenang akan diumumkan kelak.';
+      info.appendChild(note);
+    }
+  }
 });
 
 const items = dated
