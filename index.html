@@ -211,6 +211,22 @@ footer{margin-top:25px;background:var(--navy);color:#fff;text-align:center;paddi
 .finished-note{margin-top:9px;padding:9px 10px;border-radius:10px;background:#fff1f1;border:1px solid #efb3b3;color:#8f1d1d;font-size:12px;font-weight:850;text-align:left}
 @media(max-width:700px){.card.finished::after{top:50%;left:50%;width:84%;font-size:12px;padding:9px 10px;transform:translate(-50%,-50%) rotate(-7deg)}}
 
+
+.visitor-counter{
+  max-width:420px;margin:18px auto 8px;padding:14px 18px;
+  text-align:center;border-radius:16px;
+  background:linear-gradient(135deg,#082b70,#124aa8);
+  border:2px solid #ffd633;color:#fff;
+  box-shadow:0 7px 20px rgba(7,35,91,.20)
+}
+.visitor-counter .vc-title{font-size:12px;font-weight:850;letter-spacing:.06em;color:#ffe875;margin-bottom:5px}
+.visitor-counter .vc-number{font-size:26px;font-weight:950;line-height:1.1}
+.visitor-counter .vc-sub{font-size:11px;opacity:.88;margin-top:5px}
+#gc-visible-count > div{border:0!important;background:transparent!important;color:#fff!important;padding:0!important;margin:auto!important;width:auto!important;height:auto!important}
+#gc-visible-count #gcvc-for{display:none!important}
+#gc-visible-count #gcvc-views{font-size:26px!important;font-weight:950!important;color:#fff!important}
+#gc-visible-count #gcvc-by{display:none!important}
+
 </style>
 </head>
 <body>
@@ -498,7 +514,39 @@ items.slice(0,8).forEach(x=>{
   tl.appendChild(d);
 });
 </script>
+
+<div class="visitor-counter">
+  <div class="vc-title">👁️ JUMLAH KUNJUNGAN PORTAL</div>
+  <div id="gc-visible-count" class="vc-number">Memuatkan...</div>
+  <div class="vc-sub">Portal Bulan Kemerdekaan SK Temin</div>
+</div>
+
 <script data-goatcounter="https://sktemin.goatcounter.com/count"
         async src="https://gc.zgo.at/count.js"></script>
+
+<script>
+(function(){
+  var tries=0;
+  var timer=setInterval(function(){
+    tries++;
+    if(window.goatcounter && window.goatcounter.visit_count){
+      clearInterval(timer);
+      var el=document.getElementById('gc-visible-count');
+      if(el) el.textContent='';
+      window.goatcounter.visit_count({
+        append:'#gc-visible-count',
+        type:'html',
+        path:'TOTAL',
+        no_branding:true
+      });
+    } else if(tries>100){
+      clearInterval(timer);
+      var el=document.getElementById('gc-visible-count');
+      if(el) el.textContent='—';
+    }
+  },100);
+})();
+</script>
+
 </body>
 </html>
