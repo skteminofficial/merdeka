@@ -20,7 +20,18 @@ linear-gradient(90deg,#071a52 0 30%,transparent 30%),
 repeating-linear-gradient(0deg,#d71920 0 18px,#ffffff 18px 36px)}
 .hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,26,82,.93) 0 38%,rgba(7,26,82,.72) 55%,rgba(7,26,82,.34) 100%)}
 .hero .inner{position:relative;z-index:2;padding:28px 16px 26px;text-align:center}
-.logo-school{width:84px;height:84px;object-fit:contain;background:#fff;border-radius:50%;padding:7px;box-shadow:0 5px 18px #0005;border:4px solid var(--yellow);margin-bottom:6px}
+.logo-school{
+      width:88px;
+      height:88px;
+      object-fit:contain;
+      box-sizing:border-box;
+      background:#0b2d72;
+      border:4px solid var(--yellow);
+      border-radius:50%;
+      padding:9px;
+      box-shadow:0 5px 18px rgba(0,0,0,.32);
+      margin-bottom:8px
+    }
 .school{font-weight:800;letter-spacing:.06em;font-size:13px;color:#ffe67a}
 h1{margin:6px 0 4px;font-size:clamp(29px,6vw,56px);line-height:1.02}.theme{font-size:clamp(16px,3vw,23px);font-weight:750;margin:10px auto;max-width:780px}
 .theme b{color:var(--yellow)}.tag{opacity:.9;margin:0}
@@ -78,7 +89,7 @@ footer{margin-top:25px;background:var(--navy);color:#fff;text-align:center;paddi
 
   .calendar-grid{grid-template-columns:1fr}
   .hero .inner{padding:22px 12px 20px}
-  .logo-school{width:72px;height:72px}
+  .logo-school{width:76px;height:76px;padding:8px;border-radius:50%}
   h1{font-size:30px}
   .theme{font-size:16px}
 
@@ -199,7 +210,7 @@ footer{margin-top:25px;background:var(--navy);color:#fff;text-align:center;paddi
 <body>
 <header class="hero">
  <div class="inner wrap">
-  <img class="logo-school" src="https://github.com/skteminofficial/assets/raw/main/logos/logo-sk-temin.png" alt="Logo SK Temin">
+  <img class="logo-school" src="https://raw.githubusercontent.com/skteminofficial/assets/main/logos/logo-sk-temin-white.png" alt="Logo SK Temin">
   <div class="school">SEKOLAH KEBANGSAAN TEMIN · JERANTUT, PAHANG</div>
   <h1>Bulan Kemerdekaan 2026</h1>
   <p class="theme">Malaysia MADANI: <b>Kesejahteraan Dinikmati</b></p>
@@ -210,7 +221,7 @@ footer{margin-top:25px;background:var(--navy);color:#fff;text-align:center;paddi
 <nav class="quick">
  <div class="wrap">
   <a href="#kalendar">📅 Kalendar</a>
-  <a href="#semua">Semua — Tahap 1 & 2</a>
+  <a href="#semua">🇲🇾 Semua — Tahap 1 & 2</a>
   <a href="#tahap1">🔴 Tahap 1 Sahaja</a>
   <a href="#tahap2">🔵 Tahap 2 Sahaja</a>
  </div>
@@ -382,12 +393,16 @@ footer{margin-top:25px;background:var(--navy);color:#fff;text-align:center;paddi
     </div>
    </article>
   
-   <article class="card placeholder-card undated" data-title="Khat Merdeka Tahap 2">
-    <div class="img-wrap" style="min-height:260px;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px">
-      <div><div style="font-size:48px">🖋️</div><div style="font-weight:950;font-size:20px;color:#243b70;margin-top:8px">KHAT MERDEKA<br>TAHAP 2</div><div style="margin-top:8px;color:#667085">Poster menyusul kemudian</div></div>
-    </div>
-    <div class="info"><h3>Khat Merdeka Tahap 2</h3><div class="badges"><span class="badge face">Maklumat lanjut menyusul</span></div>
-     <div class="meta"><div><b>Tarikh</b><span>September 2026</span></div><div><b>Tempat</b><span>Kelas masing-masing</span></div><div><b>Kaedah</b><span>Maklumat dan poster rasmi akan ditambah kemudian.</span></div><div><b>PIC (Seliaan)</b><span class="pic">Ustazah Farah</span></div></div>
+   
+   <article class="card" data-date="2026-09-09" data-title="Khat Merdeka Tahap 2">
+    <div class="img-wrap"><img loading="lazy" src="assets/t2 -KHAT MERDEKA.jpg" alt="Khat Merdeka Tahap 2"></div>
+    <div class="info"><h3>Khat Merdeka Tahap 2</h3><div class="badges"><span class="badge face">Bersemuka — kelas</span></div>
+     <div class="meta">
+      <div><b>Tarikh</b><span class="deadline">9 September 2026</span></div>
+      <div><b>Masa</b><span>8:40 – 9:40 pagi</span></div><div><b>Tempat</b><span>Kelas masing-masing</span></div>
+      <div><b>Syarat</b><span><strong style="color:#b01520">MURID WAJIB MENGGUNAKAN PENSEL KHAT</strong></span></div>
+      <div><b>PIC (Seliaan)</b><span class="pic">Ustazah Farah</span></div>
+     </div>
     </div>
    </article>
 
