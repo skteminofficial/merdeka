@@ -222,10 +222,10 @@ footer{margin-top:25px;background:var(--navy);color:#fff;text-align:center;paddi
 .visitor-counter .vc-title{font-size:12px;font-weight:850;letter-spacing:.06em;color:#ffe875;margin-bottom:5px}
 .visitor-counter .vc-number{font-size:26px;font-weight:950;line-height:1.1}
 .visitor-counter .vc-sub{font-size:11px;opacity:.88;margin-top:5px}
-#gc-visible-count > div{border:0!important;background:transparent!important;color:#fff!important;padding:0!important;margin:auto!important;width:auto!important;height:auto!important}
-#gc-visible-count #gcvc-for{display:none!important}
-#gc-visible-count #gcvc-views{font-size:26px!important;font-weight:950!important;color:#fff!important}
-#gc-visible-count #gcvc-by{display:none!important}
+
+
+
+
 
 </style>
 </head>
@@ -517,7 +517,7 @@ items.slice(0,8).forEach(x=>{
 
 <div class="visitor-counter">
   <div class="vc-title">👁️ JUMLAH KUNJUNGAN PORTAL</div>
-  <div id="gc-visible-count" class="vc-number">Memuatkan...</div>
+  <div id="gc-visible-count" class="vc-number">—</div>
   <div class="vc-sub">Portal Bulan Kemerdekaan SK Temin</div>
 </div>
 
@@ -526,32 +526,31 @@ items.slice(0,8).forEach(x=>{
 
 
 
-<script>
-(function(){
-  var tries = 0;
-  var timer = setInterval(function(){
-    tries++;
-    if(window.goatcounter && typeof window.goatcounter.visit_count === 'function'){
-      clearInterval(timer);
-      var el = document.getElementById('gc-visible-count');
-      if(el) el.textContent = '';
-      window.goatcounter.visit_count({
-        append: '#gc-visible-count',
-        type: 'html',
-        path: 'TOTAL',
-        no_branding: true,
-        attr: {width: '100%', height: '50'}
-      });
-    } else if(tries > 100){
-      clearInterval(timer);
-      var el = document.getElementById('gc-visible-count');
-      if(el) el.textContent = '—';
-    }
-  }, 100);
-})();
-</script>
+
 <script data-goatcounter="https://sktemin.goatcounter.com/count"
         src="https://gc.zgo.at/count.js"></script>
+
+
+<script>
+(function(){
+  var el = document.getElementById('gc-visible-count');
+  if(!el) return;
+  var xhr = new XMLHttpRequest();
+  xhr.addEventListener('load', function(){
+    if(this.status >= 200 && this.status < 300){
+      try {
+        var data = JSON.parse(this.responseText);
+        el.textContent = data.count || '—';
+      } catch(e) { el.textContent = '—'; }
+    } else {
+      el.textContent = '—';
+    }
+  });
+  xhr.addEventListener('error', function(){ el.textContent = '—'; });
+  xhr.open('GET', 'https://sktemin.goatcounter.com/counter/TOTAL.json');
+  xhr.send();
+})();
+</script>
 
 </body>
 </html>
