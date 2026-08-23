@@ -227,6 +227,8 @@ footer{margin-top:25px;background:var(--navy);color:#fff;text-align:center;paddi
 
 
 
+
+.card.today-deadline{border:3px solid #d71920;box-shadow:0 0 0 5px rgba(215,25,32,.10)}
 </style>
 </head>
 <body>
@@ -441,7 +443,7 @@ footer{margin-top:25px;background:var(--navy);color:#fff;text-align:center;paddi
 
 <script>
 const today = new Date(); today.setHours(0,0,0,0);
-const tomorrow = new Date(today); tomorrow.setDate(today.getDate()+1);
+const endToday = new Date(today); endToday.setHours(23,59,59,999);
 const dated = [...document.querySelectorAll('.card[data-date]')];
 
 document.querySelectorAll('[data-sort]').forEach(grid=>{
@@ -453,9 +455,14 @@ document.querySelectorAll('[data-sort]').forEach(grid=>{
 });
 
 
-// Auto status tamat: hanya tarikh SEBELUM hari ini.
+// Auto status tamat: hanya selepas tarikh berubah ke hari berikutnya (00:00).
 dated.forEach(el=>{
   const competitionDate = new Date(el.dataset.date+'T00:00:00');
+
+  if(competitionDate.getTime()===today.getTime()){
+    el.classList.add('today-deadline');
+  }
+
   if(competitionDate < today){
     el.classList.add('finished');
     const info = el.querySelector('.info');
@@ -475,7 +482,7 @@ const items = dated
    title:el.dataset.title,
    online:el.dataset.online==="true"
  }))
- .filter(x=>x.date>=tomorrow)
+ .filter(x=>x.date>=today)
  .sort((a,b)=>a.date-b.date);
 
 const fmt = d => new Intl.DateTimeFormat('ms-MY',{day:'numeric',month:'long',year:'numeric'}).format(d);
@@ -487,21 +494,40 @@ Urgency:
 - Online/video: highlight awal jika dateline dalam 4 hari,
   supaya sempat rakam / edit / hantar.
 */
+const todayItems = items.filter(x=>x.date.getTime()===today.getTime());
 const prepOnline = items.filter(x=>x.online && daysUntil(x.date)<=4);
 const nearestFuture = items.length ? items[0] : null;
 
-let urgent = prepOnline.length ? prepOnline : (nearestFuture ? items.filter(x=>x.date.getTime()===nearestFuture.date.getTime()) : []);
+let urgent = todayItems.length
+  ? todayItems
+  : (prepOnline.length
+      ? prepOnline
+      : (nearestFuture
+          ? items.filter(x=>x.date.getTime()===nearestFuture.date.getTime())
+          : []));
 
 urgent.forEach(x=>x.el.classList.add('nearest'));
 
 if(urgent.length){
+  const hasToday = urgent.some(x=>x.date.getTime()===today.getTime());
   const onlineNotice = urgent.some(x=>x.online);
-  const label = onlineNotice ? '⚠️ PERLU MULA SEDIA SEKARANG' : '⏰ TARIKH TERDEKAT';
+  const label = hasToday
+    ? '🔴 DATELINE HARI INI'
+    : (onlineNotice ? '⚠️ PERLU MULA SEDIA SEKARANG' : '⏰ TARIKH TERDEKAT');
+
   urgent.forEach(x=>{
     x.el.style.setProperty('--urgent-label', `"${label}"`);
   });
+
   document.getElementById('nextText').innerHTML =
-    `<span class="next-name">${urgent.map(x=>`${fmt(x.date)} — ${x.title}${x.online ? ' (online/video)' : ''}`).join(' • ')}</span>`;
+    `<span class="next-name">${
+      urgent.map(x=>{
+        const when = x.date.getTime()===today.getTime()
+          ? 'HARI INI — masih dibuka sehingga 11:59 malam'
+          : fmt(x.date);
+        return `${when} — ${x.title}${x.online ? ' (online/video)' : ''}`;
+      }).join(' • ')
+    }</span>`;
 }else{
   document.getElementById('nextText').textContent='Tiada pertandingan akan datang yang perlu diberi amaran.';
 }
